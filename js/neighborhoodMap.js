@@ -44,7 +44,10 @@ NeighborhoodMap.prototype.updateVis = function() {
         .data(city)
         .enter()
         .append("path")
-        .attr("d", path);
+        .attr("d", path)
+        .attr("fill", "white")
+        .attr("stroke-width", 1)
+        .attr("stroke", "black");
 
     map.exit().remove();
 };
