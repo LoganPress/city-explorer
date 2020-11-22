@@ -1,8 +1,11 @@
 body {
     text-align: center;
+    background-color: antiquewhite;
 }
 
 #neighborhood-vis {
-    width: 700;
-    height: 500;
+    width: 50%;
+    height: 700px;
+    margin: auto auto auto auto;
+    border: 1px solid black;
 }
