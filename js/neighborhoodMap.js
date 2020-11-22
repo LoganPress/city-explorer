@@ -2,12 +2,13 @@
     The visualization for the neighborhoods
 */
 
-NeighborhoodMap = function(_parentElement, _data, _geoFeatures, _mapPosition) {
+NeighborhoodMap = function(_parentElement, _data, _geoFeatures, _mapPosition, _geoFeaturesMetro) {
 
 	this.parentElement = _parentElement;
 	this.data = _data;
     this.geoFeatures = _geoFeatures;
     this.mapPosition = _mapPosition;
+    this.geoFeaturesMetro = _geoFeaturesMetro;
 
 	this.initVis();
 }
@@ -21,7 +22,13 @@ NeighborhoodMap.prototype.initVis = function() {
         weight: 2,
         opacity: 0.7
     }).addTo(vis.map);
-    L.Icon.Default.imagePath = 'img/';
+    console.log(vis.geoFeaturesMetro);
+    L.geoJson(vis.geoFeaturesMetro, {
+        color: "black",
+        weight: 2,
+        opacity: 0.8
+    }).addTo(vis.map);
+    L.Icon.Default.imagePath = '/img/';
     L.tileLayer('https://{s}.tile.jawg.io/jawg-streets/{z}/{x}/{y}{r}.png?access-token={accessToken}', {
         attribution: '<a href="http://jawg.io" title="Tiles Courtesy of Jawg Maps" target="_blank">&copy; <b>Jawg</b>Maps</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         minZoom: 0,
@@ -29,7 +36,6 @@ NeighborhoodMap.prototype.initVis = function() {
         subdomains: 'abcd',
         accessToken: 'OL92SkQlTl9fHnhOmNS7AuDHe96QqXOSyikpwgcAP2vjWrP0hamS3SxZz9a73iLf'
     }).addTo(vis.map);
-    L.layerGroup().addTo(vis.map);
 
     // vis.margin = { left: 0, top: 0, right: 0, bottom: 0 }
     // vis.width = 700 - vis.margin.left - vis.margin.right;
@@ -46,19 +52,13 @@ NeighborhoodMap.prototype.initVis = function() {
 NeighborhoodMap.prototype.wrangleData = function() {
     let vis = this;
 
-    d3.csv('/data/transit/shapes.csv').then(function(data) {
-        console.log(data);
-        data.forEach(function(d){
-            d.shape_pt_lat = +d.shape_pt_lat;
-            d.shape_pt_lon = +d.shape_pt_lon;
-        })
-        
-        L.geoJson(data, {
-            color: "black",
-            weight: 2,
-            opacity: 0.8
-        }).addTo(vis.map);
-    });
+    // d3.csv('/data/transit/shapes.csv').then(function(data) {
+    //     console.log(data);
+    //     data.forEach(function(d){
+    //         d.shape_pt_lat = +d.shape_pt_lat;
+    //         d.shape_pt_lon = +d.shape_pt_lon;
+    //     })
+    // });
 
     vis.updateVis();
 };
