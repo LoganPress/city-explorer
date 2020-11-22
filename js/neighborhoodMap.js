@@ -46,11 +46,13 @@ NeighborhoodMap.prototype.initVis = function() {
 NeighborhoodMap.prototype.wrangleData = function() {
     let vis = this;
 
-    d3.csv('/data/transit/shapes.csv', function(d) {
-        d.shape_pt_lat = +d.shape_pt_lat;
-        d.shape_pt_lon = +d.shape_pt_lon;
-    }).then(function(data) {
+    d3.csv('/data/transit/shapes.csv').then(function(data) {
         console.log(data);
+        data.forEach(function(d){
+            d.shape_pt_lat = +d.shape_pt_lat;
+            d.shape_pt_lon = +d.shape_pt_lon;
+        })
+        
         L.geoJson(data, {
             color: "black",
             weight: 2,
