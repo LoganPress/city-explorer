@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>
+        Industry Standard Final Project Proposal
+    </title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <h1>
+        Process Book.
+    </h1>
+    
+    <div id="requirements">
+        <h3>
+            Process Book Requirements
+        </h3>
+    
+        <p>
+            <ol>
+                <li>alternative designs you tried, and the insights you got.   
+                <li>Your process book is the place you describe and document the space of possibilities you explored at each step of your project. </li>
+                <li>It is not, however, a journal or lab notebook that explains every detail - you should think carefully about the important decisions you made and insights you gained and concisely present your reasoning.</li></li>
+                <li>Include:</li>
+                <ul>
+                    <li>
+                        I strongly advise you to include many figures in your process book,
+                    </li>
+                    <li>
+                        including photos of your sketches of potential designs,
+                    </li>
+                    <li>
+                        screenshots from different visualization tools you explored,
+                    </li>
+                    <li>
+                        inspirations of visualizations you found online, 
+                    </li>
+                    <li>
+                        Several images illustrating changes in your design or focus over time will be far more informative than text describing those changes. 
+                    </li>
+                    <li>
+                        Instead, use text to explain the rationale behind the evolution of your project.
+                    </li>
+                    <li>
+                        Consider that this will be read by people who did not see your project proposal.
+                    </li>
+                    <li>
+                        Related Work: Anything that inspired you, such as a paper, a website, visualizations we discussed in class, etc.
+                    </li>
+                    <li>
+                        Questions: What questions are you trying to answer? How did these questions evolve throughout the project? What new questions did you consider in the course of your analysis?
+                        Data: Source, scraping method, cleanup, etc.
+                    </li>
+                    
+                </ul>
+            </ol>
+    <h3>Questions:</h3>
+
+    <h6>Exploratory Data Analysis:
+    </h6>
+    <ul>
+        <li>What visualizations did you use to look at your data initially? </li>
+        <li>
+            What insights did you gain? How did these insights inform your design?
+        </li>
+    </ul>
+    <h6> Design Evolution:</h6>
+    <ul>
+        <li>What are the different visualizations you considered? </li>
+        <li>
+            Justify the design decisions you made using the perceptual and design principles you learned in the course. 
+        </li>
+        <li>
+            Did you deviate from your proposal?
+        </li>
+    </ul>
+    <h6>
+        Implementation:
+    </h6>
+    <ul>
+        <li>Describe the intent and functionality of the interactive visualizations you implemented. </li>
+        <li> Provide clear and well-referenced images showing the critical design and interaction elements.</li>
+    </ul>
+    <h6>
+        Evaluation:
+    </h6>
+        <ul>
+            <li>What did you learn about the data by using your visualizations? How did you answer your questions? </li>
+            <li>How well does your visualization work, and how could you further improve it?</li>
+            <li>As this will be your only chance to describe your project in detail, please make sure that your process book is a standalone webpage that fully explains your results and the final design.</li>
+        </ul>
+        
+        
+       
+         
+       
+
+        
+        
+
+        </p>
+    </div>
+    
+    <div id="matt">
+        <h1>THE INDUSTRY STANDARDS</h1>
+        <h2>Basic Info</h2>
+        <p>
+            Team Name:  The Industry Standards <br>
+            Group members:  Brian Hall,  Logan Press,  Matt Halom</br>
+            Student IDs: 455024,  457670,  457234
+        </p>
+
+        <h2>Background and Motivation</h2>
+        <p>
+            Our primary motivation for this project is to gain an understanding of livability and workability in various
+            cities throughout the United States. We are hoping to gain a more comprehensive understanding of these
+            cities to complement our topical impressions of them. We can accomplish this by analyzing concrete metrics 
+            related to several aspects of the city, visualizing these metrics, and using interactability to compare our 
+            subjective understandings to these objective measures. We are interested in the current state of 
+            cities such as St. Louis, especially in the areas of environment, economy, and mobility.
+        </p>
+
+        <h2>Project Objectives</h2>
+        <p>Our objective is to create a highly interactive and engaging <i>exploratory</i> visualization for each city of interest which answers these
+            questions for the user:
+        </p>
+        <ul>
+            <li>
+                How easy is it get around with a car? What about without a car? Is there accessible public transit? How walkable is each area? Is biking safe and easy?
+            </li>
+            <li>
+                What is the current status of the city's economy? How affordable is it? What is the local business scene like?
+            </li>
+            <li>
+                What are the environmental conditions (weather, air quality, precipitation) in different areas of the city?
+            </li>
+        </ul>
+        
+        <h2>Data</h2>
+        <p>
+            We plan to grab information using our APIs and found datasets, and store them on the server to make them
+            accessible to our visualization scripts.
+        </p>
+        <div id="schema">
+            <ol>
+                <li>
+                    City-Scoped Data
+                    <ol>
+                        <li>
+                            <a href="https://www.metrostlouis.org/developer-resources">Metro Data / Maps</a>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    Neighborhood-Scoped Data
+                    <ol>
+                        <li><a href="https://www.census.gov/data/developers/data-sets/popest-popproj/popest.html">Population</a></li>
+                        <li>Mobility
+                            <ul>
+                                <li><a href="https://www.walkscore.com/professional/api.php">Walkability/Bikeability and Public Transit</a></li>
+                            </ul>
+                        </li>
+                        <li>Economy
+                            <ul>
+                                <li><a href="https://www.zillow.com/howto/api/APIOverview.htm">Housing Data</a></li>
+                                <li><a href="https://scaleserp.com/docs/search-api/results/places-results">Local Business Data</a></li>
+                            </ul>
+                        </li>
+                        <li>Environment
+                            <ul>
+                                <li><a href="https://weather.com/swagger-docs/call-for-code">Weather Data</a></li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <h2>Data Processing</h2>
+        <p>
+            We are not anticipating a substrantial amount of data cleanup,
+            but if we find a useful source of data that needs significant wrangling.
+            We are confident we have enough experience and references to handle it.
+            <br><br>
+            The plan is to create our own
+            "custom" dataset by using several different APIs, so most of the work will be formatting
+            the data from all these sources into a useful format/schema rather than rendering the data in real time.
+            <br><br>
+            After we've collected sufficient data for each topic of interest (mobility, environment, economy),
+            we'll derive an overall score for each neighborhood in each topic. The methodology for the scores is TBD but will inlude data from the APIs listed above.  
+            <br><br>
+            Our data processing will be done mostly separately from the actual visualization
+            implementation. Our dataset(s) should be small enough that we can feasibly
+            work with CSV or JSON files like we've been doing in studios and previous assignments.
+        </p>
+        <h2>Visualization Design</h2>
+        <div>
+            <h4>Iteration I - </h4>
+            <div id="iteration1-text">
+                <p>
+                    Our initial visualization ideas centered around mapping the metro lines, as seen in the top two sketches below.
+                    The idea was that we could display a granular view of St. Louis's population distribution to visualize mobility
+                    with respect to how certain areas are disproprtionately served by the metro system. The first idea was to use markers 
+                    with tool-tips to display population along with other data for each neighborhood. We eventually decided that visually
+                    encoding population like in a choropleth map as seen on the right. The main problem with these designs is that they 
+                    focus too heavily on mobility and don't incorporate economic or environmental factors. To incorporate environmental data,
+                    we thought of including a bar graph indicating average temperature for each month. For economic data, we designed a focus
+                    view of the map with markers representing local businesses that the user can scroll over or click on to see more information.
+                    You can see how all these ideas were better fleshed out and synthesized under Iteration II.
+                </p>
+            </div>
+            <div id="iteration1-container">
+                <img src="images/mapmarkers.png" class = "iteration1"></img>
+                <img src="images/mapcircles.png"class = "iteration1"></img> <br>
+                <img src="images/climate.png" class = "iteration1"></img>
+                <img src="images/business.jpeg" class="iteration1"></img><br /> <br>
+            </div>
+            <h4>Iteration II - </h4>
+            <div id="iteration2-text">
+                <p>
+                    We incorporated the other factors we are exploring for this project by creating "filters" which adopt different lenses 
+                    through which to view the data. The filters are each of our target categories: Mobility, Economy, and Environment. These 
+                    filters allow us to create different choropleth maps for each target. When a user hovers over a neighborhood, they 
+                    see a tooltip with a breakdown of the neighborhood's information. Clicking on a neighborhood in one of these views 
+                    expands the neighborhood visualization for the selection with the corresponding filter. For example, if the economy filter 
+                    is selected, the neighborhood view shows markers for local businesses at their locations. Clicking on one of these markers 
+                    opens another tooltip which provides information about the business itself.
+                </p>
+            </div>
+            <div id="iteration2-container">
+                <h3 class="center22">
+                    <strong>City Views:</strong>
+                </h3>
+                <img src="images/mobility_city.png" class = "iteration2"/> <br /> <br>
+                <img src="images/economy_city.png" class = "iteration2"/></img> <br /> <br>
+                <img src="images/environment_city.png" class = "iteration2"/> <br /> <br>
+                <h3 class="center22">
+                    <strong>Neighborhood Views:</strong>
+                </h3>
+                <img src="images/mobility_neighborhood.png" class = "iteration2"/> <br /> <br>
+                <img src="images/economy_neighborhood.png" class = "iteration2"/> <br /> <br>
+                <img src="images/environment_neighborhood.png" class = "iteration2"/> <br /> <br>
+            </div>
+        </div>
+
+        <h2>Must-Have Features</h2>
+        <ul>
+            <li>City view
+                <ul>
+                    <li>
+                        Ability to switch between mobility, economy, and environment lenses
+                    </li>
+                    <li>
+                        Neighborhood outlines and shading of the neighborhoods based on metrics selected by user - ie. population, economy index, or walkscore
+                    </li>
+                </ul>
+            </li>
+            <li >Neighborhood view
+                <ul>
+                    <li>
+                        Detailed information for mobility, economy, and environment for individual neighborhoods
+                    </li>
+                    <li>
+                        Semantic information and concrete data presented through use of 3rd party API's
+                    </li>
+                    <li>
+                        Overall "scores" that are derived for environment, mobility, and economy
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <h2>Optional Features</h2>
+        <ul>
+            <li>
+                Geo-data for metro lines
+            </li>
+            <li>
+                Additional cities
+            </li>
+            <li>
+                Comparison View for engaging with multiple neighborhoods at the same time
+            </li>
+            
+        </ul>
+        <h2>Project Timeline</h2>
+        <table>
+            <thead>
+                <tr>
+                    <td class="logan">Dates</td>
+                    <td class="logan">Objectives</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Nov 16th</td>
+                    <td>Proposal Complete.</td>
+                </tr>
+                <tr>
+                    <td>Nov 23rd</td>
+                    <td>Initial Prototype Complete & Data Wrangling Complete.</td>
+                </tr>
+                <tr>
+                    <td>Dec 7th</td>
+                    <td>Fully Functioning Prototype is launched to the web.</td>
+                </tr>
+                <tr>
+                    <td>Dec 14th</td>
+                    <td>Presentation Done, Finalized Exploratory Visualization Prototype Complete.</td>
+                </tr>
+                <tr>
+                    <td>Jan 6th</td>
+                    <td>Project complete, sharing it with the world! Consider adding more cities to the tool.</td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Meetings and Workflow</h4>
+        <ul>
+            <li>
+                Weekly Meeting on Saturday at 10:00 am CST; during this time we check in and implement our visualization as a group
+            </li>
+            <li>
+                Evaluate weekly meeting schedule once Logan goes home (Pacific Time)
+            </li>
+            <li>
+                Communication via Slack, iMessage, and Zoom.
+            </li>
+            <li>
+                Maintain appropriate morale and <a href="#">Industry Standards</a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+

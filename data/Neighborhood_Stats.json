@@ -2,358 +2,767 @@
     "features": [
         {
             "nid": 1,
-            "population":7779
+            "name": "Carondelet",
+            "population":7779,
+            "walkscore": 58,
+            "bikescore": 63,
+            "transitscore": 42,
+            "zhvi":105253
         },
         {
             "nid": 2,
-            "population":2695
+            "name": "Patch",
+            "population":2695,
+            "walkscore": 74,
+            "transitscore": 42,
+            "bikescore": 71,
+            "zhvi":67138
         },
         {
             "nid": 3,
-            "population":3666
+            "name": "Holly Hills",
+            "population":3666,
+            "walkscore": 59,
+            "transitscore": 39,
+            "bikescore": 65,
+            "zhvi": 183384
         },
         {
             "nid": 4,
-            "population":9597
+            "name": "Boulevard Heights",
+            "population":9597,
+            "walkscore": 42,
+            "transitscore": 39,
+            "bikescore": 67,
+            "zhvi":143003
         },
         {
             "nid": 5,
-            "population":12647
+            "name": "Bevo Mill",
+            "population":12647,
+            "walkscore": 67,
+            "transitscore": 39,
+            "bikescore": 65,
+            "zhvi":118570
         }, 
         {
             "nid": 6,
-            "population":7619
+            "name": "Princeton Heights",
+            "population":7619,
+            "walkscore": 63,
+            "transitscore": 40,
+            "bikescore": 60,
+            "zhvi":173940
         },   
         {
             "nid": 7,
-            "population":0
+            "name": "Southampton",
+            "population":6904,
+            "walkscore": 70,
+            "transitscore": 40,
+            "bikescore": 56,
+            "zhvi":211052
         },
         {
             "nid": 8,
-            "population":7380
+            "name": "St. Louis Hills",
+            "population":7380,
+            "walkscore": 62,
+            "transitscore": 39,
+            "bikescore": 60,
+            "zhvi":317814
         }, 
         {
             "nid": 9,
-            "population":9486
+            "name": "Lindenwood Park",
+            "population":9486,
+            "walkscore": 59,
+            "transitscore": 43,
+            "bikescore": 58,
+            "zhvi":192436
         },
         {
             "nid": 10,
-            "population":1575
+            "name": "Ellendale",
+            "population":1575,
+            "walkscore": 55,
+            "transitscore": 34,
+            "bikescore": 63,
+            "zhvi":148890
         }, 
         {
             "nid": 11,
-            "population":3074
+            "name": "Clifton Heights",
+            "population":3074,
+            "walkscore": 51,
+            "transitscore": 37,
+            "bikescore": 47,
+            "zhvi":167166
         },
         {
             "nid": 12,
-            "population":2443
+            "name": "The Hill",
+            "population":2443,
+            "walkscore": 77,
+            "transitscore": 39,
+            "bikescore": 59,
+            "zhvi":182963
         }, 
         {
             "nid": 13,
-            "population":4885
+            "name": "Southwest Garden",
+            "population":4885,
+            "walkscore": 69,
+            "transitscore": 39,
+            "bikescore": 59,
+            "zhvi":188699
         },
         {
             "nid": 14,
-            "population":7892
+            "name": "North Hampton",
+            "population":7892,
+            "walkscore": 61,
+            "transitscore": 40,
+            "bikescore": 54,
+            "zhvi":195481
         },
         {
             "nid": 15,
-            "population":13333
+            "name": "Tower Grove South",
+            "population":13333,
+            "walkscore": 74,
+            "transitscore": 44,
+            "bikescore": 63,
+            "zhvi":189888
         },
         {
             "nid": 16,
-            "population":15769
+            "name": "Dutchtown",
+            "population":15769,
+            "walkscore": 72,
+            "transitscore": 44,
+            "bikescore": 61,
+            "zhvi":87413
         },
         {
             "nid": 17,
-            "population":4408
+            "name": "Mount Pleasant",
+            "population":4408,
+            "walkscore": 60,
+            "transitscore": 39,
+            "bikescore": 60,
+            "zhvi":78333
         },
         {
             "nid": 18,
-            "population":2692
+            "name": "Marine Villa",
+            "population":2692,
+            "walkscore": 71,
+            "transitscore": 39,
+            "bikescore": 64,
+            "zhvi":190720
         },
         {
             "nid": 19,
-            "population":5225
+            "name": "Gravois Park",
+            "population":5225,
+            "walkscore": 82,
+            "transitscore": 45,
+            "bikescore": 65,
+            "zhvi":190720
         },
         {
             "nid": 20,
-            "population":6
+            "name": "Kosciusko",
+            "population":6,
+            "walkscore": 38,
+            "bikescore": 40,
+            "zhvi":190720
         },
         {
             "nid": 21,
-            "population":3448
+            "name": "Soulard",
+            "population":3448,
+            "walkscore": 83,
+            "transitscore": 43,
+            "bikescore": 63,
+            "zhvi":272234
+            
         },
         {
             "nid": 22,
-            "population":3532
+            "name": "Benton Park",
+            "population":3532,
+            "walkscore": 78,
+            "transitscore": 44,
+            "bikescore": 64,
+            "zhvi":233694
         },
         {
             "nid": 23,
-            "population":1491
+            "name": "McKinley Heights",
+            "population":1491,
+            "walkscore": 75,
+            "transitscore": 44,
+            "bikescore": 69,
+            "zhvi":226473
         },
         {
             "nid": 24,
-            "population":2666
+            "name": "Fox Park",
+            "population":2666,
+            "walkscore": 79,
+            "transitscore": 43,
+            "bikescore": 64,
+            "zhvi":219278
         },
         {
             "nid": 25,
-            "population":5853
+            "name": "Tower Grove East",
+            "population":5853,
+            "walkscore": 82,
+            "transitscore": 46,
+            "bikescore": 69,
+            "zhvi":240069
         },
         {
             "nid": 26,
-            "population":1315
+            "name": "Compton Heights",
+            "population":1315,
+            "walkscore": 71,
+            "transitscore": 43,
+            "bikescore": 58,
+            "zhvi": 440067
         },
         {
             "nid": 27,
-            "population":6811
+            "name": "Shaw",
+            "population":6811,
+            "walkscore": 60,
+            "transitscore": 41,
+            "bikescore": 64,
+            "zhvi":310165
         },
         {
             "nid": 28,
-            "population":1037
+            "name": "Botanical Heights",
+            "population":1037,
+            "walkscore": 62,
+            "transitscore": 42,
+            "bikescore": 62,
+            "zhvi":322002
         }, 
         {
             "nid": 29,
-            "population":1060
+            "name": "Tiffany",
+            "population":1060,
+            "walkscore": 50,
+            "transitscore": 44,
+            "bikescore": 51,
+            "zhvi":214593 
         }, 
         {
             "nid": 30,
-            "population":4376
+            "name": "Benton Park West",
+            "population":4376,
+            "walkscore": 85,
+            "transitscore": 45,
+            "bikescore": 68,
+            "zhvi":169246
         },
         {
             "nid": 31,
-            "population":3456
+            "name": "The Gate District",
+            "population":3456,
+            "walkscore": 63,
+            "transitscore": 45,
+            "bikescore": 58,
+            "zhvi":230851
         },   
         {
             "nid": 32,
-            "population":2189
+            "name": "Lafayette Square",
+            "population":2189,
+            "walkscore": 76,
+            "transitscore": 56,
+            "bikescore": 70,
+            "zhvi":306602
         },
         {
             "nid": 33,
-            "population":2267
+            "name": "Peabody-Darst-Webbe (Near Southside)",
+            "population":2267,
+            "walkscore": 77,
+            "transitscore": 65,
+            "bikescore": 69,
+            "zhvi":178125
         }, 
         {
             "nid": 34,
-            "population":0
+            "name": "LaSalle Park",
+            "population":1299,
+            "walkscore": 75,
+            "transitscore": 61,
+            "bikescore": 69,
+            "zhvi":186100
         },
         {
             "nid": 35,
-            "population":4127
+            "name": "Downtown",
+            "population":4127,
+            "walkscore": 90,
+            "transitscore": 68,
+            "bikescore": 63,
+            "zhvi":194749
         },
         {
             "nid": 36,
-            "population":3935
+            "name": "Downtown West",
+            "population":3935,
+            "walkscore": 90,
+            "transitscore": 68,
+            "bikescore": 63,
+            "zhvi":145488
         },
         {
             "nid": 37,
-            "population":5652
+            "name": "Midtown",
+            "population":5652,
+            "walkscore": 71,
+            "transitscore": 58,
+            "bikescore": 63,
+            "zhvi":272067
         },
         {
             "nid": 38,
+            "name": "Central West End",
             "population":14471,
             "walkscore": 77,
             "bikescore": 66,
-            "transitscore": 57
+            "transitscore": 57,
+            "zhvi":361798
         },
         {
             "nid": 39,
-            "population":2918
+            "name": "Forest Park Southeast",
+            "population":2918,
+            "walkscore": 77,
+            "transitscore": 60,
+            "bikescore": 82,
+            "zhvi":224062
         },
         {
             "nid": 40,
-            "population":180
+            "name": "Kings Oak",
+            "population":180,
+            "walkscore": 40,
+            "bikescore": 74,
+            "zhvi":211516
         },   
         {
             "nid": 41,
-            "population":620
+            "name": "Cheltenham",
+            "population":620,
+            "walkscore": 49,
+            "transitscore": 39,
+            "bikescore": 67,
+            "zhvi":137891
         },    
         {
             "nid": 42,
-            "population":2251
+            "name": "Clayton-Tamm",
+            "population":2251,
+            "walkscore": 53,
+            "transitscore": 40,
+            "bikescore": 64,
+            "zhvi":170688
         },    
         {
             "nid": 43,
-            "population":2375
+            "name": "Franz Park",
+            "population":2375,
+            "walkscore": 57,
+            "transitscore": 37,
+            "bikescore": 60,
+            "zhvi":163025
         },
         {
             "nid": 44,
-            "population":2196
+            "name": "Hi-Pointe",
+            "population":2196,
+            "walkscore": 56,
+            "transitscore": 41,
+            "bikescore": 62,
+            "zhvi":169715
         },    
         {
             "nid": 45,
-            "population":1054
+            "name": "Wydown/Skinker",
+            "population":1054,
+            "walkscore": 71,
+            "transitscore": 47,
+            "bikescore": 65,
+            "zhvi":372639
         },
         {
             "nid": 46,
-            "population":4077
+            "name": "Skinker DeBaliviere",
+            "population":4077,
+            "walkscore": 69,
+            "transitscore": 61,
+            "bikescore": 76,
+            "zhvi":277003
         },
         {
             "nid": 47,
-            "population":3466
+            "name": "DeBaliviere Place",
+            "population":3466,
+            "walkscore": 63,
+            "transitscore": 59,
+            "bikescore": 76,
+            "zhvi":168377
         },
         {
             "nid": 48,
-            "population":6488
+            "name": "West End",
+            "population":6488,
+            "walkscore": 60,
+            "transitscore": 52,
+            "bikescore": 55,
+            "zhvi":111994
         },
         {
             "nid": 49,
-            "population":960
+            "name": "Visitation Park",
+            "population":960,
+            "walkscore": 62,
+            "transitscore": 49,
+            "bikescore": 66,
+            "zhvi":190720
         },
         {
             "nid": 50,
-            "population":5895
+            "name": "Wells/Goodfellow",
+            "population":5895,
+            "walkscore": 57,
+            "transitscore": 43,
+            "bikescore": 55,
+            "zhvi":190720
         },
         {
             "nid": 51,
-            "population":2816
+            "name": "Academy/Sherman Park",
+            "population":2816,
+            "walkscore": 73,
+            "transitscore": 45,
+            "bikescore": 70,
+            "zhvi":190720
         },
         {
             "nid": 52,
-            "population":3441
+            "name": "Kingsway West",
+            "population":3441,
+            "walkscore": 67,
+            "transitscore": 43,
+            "bikescore": 62,
+            "zhvi":190720
         },
         {
             "nid": 53,
-            "population":1484
+            "name": "Fountain Park",
+            "population":1484,
+            "walkscore": 80,
+            "transitscore": 46,
+            "bikescore": 64,
+            "zhvi":190720
         },
         {
             "nid": 54,
-            "population":1673
+            "name": "Lewis Place",
+            "population":1673,
+            "walkscore": 67,
+            "transitscore": 46,
+            "bikescore": 62,
+            "zhvi":190720
         },
         {
             "nid": 55,
-            "population":3542
+            "name": "Kingsway East",
+            "population":3542,
+            "walkscore": 65,
+            "transitscore": 43,
+            "bikescore": 61,
+            "zhvi": 190720
         }, 
         {
             "nid": 56,
-            "population":6189
+            "name": "Greater Ville",
+            "population":6189,
+            "walkscore": 60,
+            "transitscore": 44,
+            "bikescore": 61,
+            "zhvi":20885
         },  
         {
             "nid": 57,
-            "population":1868
+            "name": "The Ville",
+            "population":1868,
+            "walkscore": 59,
+            "transitscore": 43,
+            "bikescore": 63,
+            "zhvi":190720
         }, 
         {
             "nid": 58,
-            "population":1682
+            "name": "Vandeventer",
+            "population":1682,
+            "walkscore": 63,
+            "transitscore": 45,
+            "bikescore": 61,
+            "zhvi":59523
         }, 
         {
             "nid": 59,
-            "population":5557
+            "name": "JeffVanderLou",
+            "population":5557,
+            "walkscore": 68,
+            "transitscore": 47,
+            "bikescore": 63,
+            "zhvi":190720
         },  
         {
             "nid": 60,
-            "population":2939
+            "name": "St. Louis Place",
+            "population":2939,
+            "walkscore": 62,
+            "transitscore": 44,
+            "bikescore": 58,
+            "zhvi":76289
         }, 
         {
             "nid": 61,
-            "population":2779
+            "name": "Carr Square",
+            "population":2779,
+            "walkscore": 70,
+            "transitscore": 54,
+            "bikescore": 61,
+            "zhvi":190720
         },  
         {
             "nid": 62,
-            "population":1463
+            "name": "Columbus Square",
+            "population":1463,
+            "walkscore": 75,
+            "transitscore": 61,
+            "bikescore": 64,
+            "zhvi":190720
         },  
         {
             "nid": 63,
-            "population":1994
+            "name": "Old North St. Louis",
+            "population":1994,
+            "walkscore": 69,
+            "transitscore": 42,
+            "bikescore": 64,
+            "zhvi":190720
         },
         {
             "nid": 64,
-            "population":552
+            "name": "Near North Riverfront",
+            "population":552,
+            "walkscore": 40,
+            "transitscore": 42,
+            "bikescore": 62,
+            "zhvi":190720
         },  
         {
             "nid": 65,
-            "population":2590
+            "name": "Hyde Park",
+            "population":2590,
+            "walkscore": 57,
+            "transitscore": 44,
+            "bikescore": 57,
+            "zhvi":190720
         },  
         {
             "nid": 66,
-            "population":1872
+            "name": "College Hill",
+            "population":1872,
+            "walkscore": 57,
+            "transitscore": 46,
+            "bikescore": 59,
+            "zhvi":190720
         },
         {
             "nid": 67,
-            "population":1793
+            "name": "Fairground",
+            "population":1793,
+            "walkscore": 65,
+            "transitscore": 47,
+            "bikescore": 62,
+            "zhvi":190720
         },
         {
             "nid": 68,
-            "population":5791
+            "name": "O'Fallon",
+            "population":5791,
+            "walkscore": 56,
+            "transitscore": 45,
+            "bikescore": 63,
+            "zhvi":26028
         },
         {
             "nid": 69,
-            "population":6427
+            "name": "Penrose",
+            "population":6427,
+            "walkscore": 58,
+            "transitscore": 44,
+            "bikescore": 53,
+            "zhvi":31297
         }, 
         {
             "nid": 70,
-            "population":1295
+            "name": "Mark Twain I-70 Industrial",
+            "population":1295,
+            "walkscore": 55,
+            "transitscore": 38,
+            "bikescore": 51,
+            "zhvi":190720
         }, 
         {
             "nid": 71,
-            "population":4188
+            "name": "Mark Twain",
+            "population":4188,
+            "walkscore": 43,
+            "transitscore": 44,
+            "bikescore": 52,
+            "zhvi":26245
         }, 
         {
             "nid": 72,
-            "population":4130
+            "name": "Walnut Park East",
+            "population":4130,
+            "walkscore": 46,
+            "transitscore": 40,
+            "bikescore": 52,
+            "zhvi":24880
         }, 
         {
             "nid": 73,
-            "population":0
+            "name": "North Pointe",
+            "population":3947,
+            "walkscore": 52,
+            "transitscore": 42,
+            "bikescore": 57,
+            "zhvi":190720
         },    
         {
             "nid": 74,
-            "population":7282
+            "name": "Baden",
+            "population":7282,
+            "walkscore": 52,
+            "transitscore": 44,
+            "bikescore": 53,
+            "zhvi":190720
         },  
         {
             "nid": 75,
-            "population":308
+            "name": "Riverview",
+            "population":308,
+            "walkscore": 22,
+            "transitscore": 33,
+            "bikescore": 9,
+            "zhvi":190720
         },
         {
             "nid": 76,
-            "population":3349
+            "name": "Walnut Park West",
+            "population":3349,
+            "walkscore": 60,
+            "transitscore": 40,
+            "bikescore": 59,
+            "zhvi":190720
         }, 
         {
             "nid": 77,
-            "population":3562
+            "name": "Covenant Blu Grand Center",
+            "population":3562,
+            "walkscore": 82,
+            "transitscore": 52,
+            "bikescore": 66,
+            "zhvi":120947
         },  
         {
             "nid": 78,
-            "population":3105
+            "name": "Hamilton Heights",
+            "population":3105,
+            "walkscore": 62,
+            "transitscore": 46,
+            "bikescore": 60,
+            "zhvi":190720
         },
         {
             "nid": 79,
-            "population":937
+            "name": "North Riverfront",
+            "population":937,
+            "walkscore": 14,
+            "transitscore": 30,
+            "bikescore": 55,
+            "zhvi":190720
         }, 
         {
             "nid": 80,
-            "population":0
+            "name": "Carondelet Park",
+            "population":0,
+            "zhvi":0
         },
         {
             "nid": 81,
-            "population":0
+            "name": "Tower Grove Park",
+            "population":0,
+            "zhvi":0
         },  
         {
             "nid": 82,
-            "population":0
+            "name": "Forest Park",
+            "population":0,
+            "zhvi":0
         },
         {
             "nid": 83,
-            "population":0
+            "name": "Fairground Park",
+            "population":0,
+            "zhvi":0
         },
         {
             "nid": 84,
-            "population":0
+            "name": "Penrose Park",
+            "population":0,
+            "zhvi":0
         }, 
         {
             "nid": 85,
-            "population":0
+            "name": "O'Fallon Park",
+            "population":0,
+            "zhvi":0
         }, 
         {
             "nid": 86,
-            "population":0
+            "name": "Bellefontaine/Calvary Cemetery",
+            "population":0,
+            "zhvi":0
         },
         {
             "nid": 87,
-            "population":10
+            "name": "Missouri Botanical Garden",
+            "population":10,
+            "zhvi":190720
         },
         {
             "nid": 88,
-            "population":0
+            "name": "Willmore Park",
+            "population":0,
+            "zhvi":0
         }
     ]
 }
