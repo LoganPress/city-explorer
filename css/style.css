@@ -7,7 +7,7 @@ body {
     padding-top: 0px;
 }
 
-#city-vis {
+#city-vis-container {
     width: 50%;
     height: 800px;
     margin: auto auto auto auto;

@@ -2,8 +2,7 @@
     The visualization for the neighborhoods
 */
 
-NeighborhoodMap = function(_parentElement, _data, _geoFeatures, _mapPosition, _geoFeaturesMetro) {
-
+CityMap = function(_parentElement, _data, _geoFeatures, _mapPosition, _geoFeaturesMetro) {
 	this.parentElement = _parentElement;
 	this.data = _data;
     this.geoFeatures = _geoFeatures;
@@ -14,30 +13,42 @@ NeighborhoodMap = function(_parentElement, _data, _geoFeatures, _mapPosition, _g
 }
 
 
-NeighborhoodMap.prototype.initVis = function() {
+CityMap.prototype.initVis = function() {
     let vis = this;
+    vis.opacityScale = d3.scaleLinear()
+        .domain([0, d3.max(vis.data, (d) => d.population)])
+        .range([0.2, 0.8]);
 
     vis.map = L.map(vis.parentElement).setView(vis.mapPosition, 12);
+
     let neighborhoodLayer = L.geoJson(vis.geoFeatures, {
         color: "#3F7484",
         weight: 2,
-        style: function() {return { opacity: 0.7 }},
+        style: choroplethStyle,
         onEachFeature: onEachNeighborhood
     });
+
     function onEachNeighborhood(n, layer) {
         const parkIds = [80, 81, 82, 83, 84, 85, 86, 87];
         const num = n.properties.NHD_NUM;
         const index = num - 1;
         const population = vis.data[index].population;
-        layer.bindTooltip('<h2>' + vis.data[index].name + '</h2><strong>Population: ' + population + '</strong>', {
-            sticky: true
-        });
         if (!parkIds.includes(num)) {
+            layer.bindTooltip('<h2>' + vis.data[index].name + '</h2><strong>Population: ' + population + '</strong>', {
+                sticky: true
+            });
             layer.on('click', function() {
                 console.log(n.properties.NHD_NUM);
             });
         }
     }
+
+    function choroplethStyle(d) {
+        const index = d.properties.NHD_NUM - 1;
+        const population = vis.data[index].population;
+        return { fillOpacity: vis.opacityScale(population) }
+    }
+
     neighborhoodLayer.addTo(vis.map);
     // console.log(vis.geoFeaturesMetro);
     // L.geoJson(vis.geoFeaturesMetro, {
@@ -57,7 +68,7 @@ NeighborhoodMap.prototype.initVis = function() {
     vis.wrangleData();
 };
 
-NeighborhoodMap.prototype.wrangleData = function() {
+CityMap.prototype.wrangleData = function() {
     let vis = this;
 
     // d3.csv('/data/transit/shapes.csv').then(function(data) {
@@ -71,7 +82,7 @@ NeighborhoodMap.prototype.wrangleData = function() {
     vis.updateVis();
 };
 
-NeighborhoodMap.prototype.updateVis = function() {
+CityMap.prototype.updateVis = function() {
     let vis = this;
 
 };
