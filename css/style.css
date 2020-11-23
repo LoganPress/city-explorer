@@ -3,9 +3,13 @@ body {
     background-color: antiquewhite;
 }
 
-#neighborhood-vis {
+.leaflet-tooltip {
+    padding-top: 0px;
+}
+
+#city-vis {
     width: 50%;
-    height: 700px;
+    height: 800px;
     margin: auto auto auto auto;
     border: 1px solid black;
 }

@@ -522,7 +522,7 @@
     {
       "type": "Feature",
       "properties": {
-        "NHD_NUM": 61,
+        "NHD_NUM": 59,
         "NHD_NAME": "Jeff Vanderlou",
         "ANGLE": 0.0,
         "NHD_NUMTXT": "59 Jeff Vanderlou",
@@ -4755,7 +4755,7 @@
     {
       "type": "Feature",
       "properties": {
-        "NHD_NUM": 61,
+        "NHD_NUM": 64,
         "NHD_NAME": "Near North Riverfront",
         "ANGLE": 0.0,
         "NHD_NUMTXT": "64 Near North Riverfront",
@@ -4873,7 +4873,7 @@
     {
       "type": "Feature",
       "properties": {
-        "NHD_NUM": 61,
+        "NHD_NUM": 62,
         "NHD_NAME": "Columbus Square",
         "ANGLE": 0.0,
         "NHD_NUMTXT": "62 Columbus Square",
@@ -4923,7 +4923,7 @@
     {
       "type": "Feature",
       "properties": {
-        "NHD_NUM": 61,
+        "NHD_NUM": 63,
         "NHD_NAME": "Old North St. Louis",
         "ANGLE": 0.0,
         "NHD_NUMTXT": "63 Old North St. Louis",
@@ -5023,7 +5023,7 @@
     {
       "type": "Feature",
       "properties": {
-        "NHD_NUM": 61,
+        "NHD_NUM": 65,
         "NHD_NAME": "Hyde Park",
         "ANGLE": 0.0,
         "NHD_NUMTXT": "65 Hyde Park",
@@ -5088,7 +5088,7 @@
     {
       "type": "Feature",
       "properties": {
-        "NHD_NUM": 61,
+        "NHD_NUM": 60,
         "NHD_NAME": "St. Louis Place",
         "ANGLE": 0.0,
         "NHD_NUMTXT": "60 St. Louis Place",
@@ -5157,7 +5157,7 @@
     {
       "type": "Feature",
       "properties": {
-        "NHD_NUM": 61,
+        "NHD_NUM": 36,
         "NHD_NAME": "Downtown West",
         "ANGLE": 0.0,
         "NHD_NUMTXT": "36 Downtown West",
