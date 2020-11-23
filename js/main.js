@@ -1,10 +1,10 @@
 let cityVis;
 let neighborhoodVis;
 
-$.getJSON("/data/Neighborhood_Boundaries.json", function (geoFeatures) {
+$.getJSON("data/Neighborhood_Boundaries.json", function (geoFeatures) {
   const mapPosition = [38.636118, -90.250592];
-  $.getJSON("/data/transit/metro.json", function (geoFeaturesMetro) {
-    $.getJSON("/data/Neighborhood_Stats.json", function (nbhdStats) {
+  $.getJSON("data/transit/metro.json", function (geoFeaturesMetro) {
+    $.getJSON("data/Neighborhood_Stats.json", function (nbhdStats) {
       neighborhoodVis = new NeighborhoodVis("neighborhood-vis-container", []);
 
       cityVis = new CityMap(
