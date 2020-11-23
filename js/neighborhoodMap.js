@@ -16,7 +16,7 @@ NeighborhoodMap = function(_parentElement, _data, _geoFeatures, _mapPosition, _g
 
 NeighborhoodMap.prototype.initVis = function() {
     let vis = this;
-    // console.log(vis.data.population['1']);
+
     vis.map = L.map(vis.parentElement).setView(vis.mapPosition, 12);
     let neighborhoodLayer = L.geoJson(vis.geoFeatures, {
         color: "#3F7484",
@@ -26,9 +26,10 @@ NeighborhoodMap.prototype.initVis = function() {
     });
     function onEachNeighborhood(n, layer) {
         const parkIds = [80, 81, 82, 83, 84, 85, 86, 87];
-        const num = toString(n.properties.NHD_NUM);
-        // const population = vis.data.population[num];
-        layer.bindTooltip('<h2>' + n.properties.NHD_NAME + '</h2><strong>Hello</strong>', {
+        const num = n.properties.NHD_NUM;
+        const index = num - 1;
+        const population = vis.data[index].population;
+        layer.bindTooltip('<h2>' + n.properties.NHD_NAME + '</h2><strong>Population: ' + population + '</strong>', {
             sticky: true
         });
         if (!parkIds.includes(num)) {
