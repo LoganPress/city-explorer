@@ -294,7 +294,7 @@
 					<br />
 					<br />
 				</div>
-				<h4>Iteration III -</h4>
+				<h4 id="iteration3-header">Iteration III -</h4>
 				<div id="iteration3-text">
 					<p>
 						This iteration incorported the choropleth map we designed as an overlay on a Leaflet map of the city. 
@@ -324,15 +324,6 @@
 					</p>
 				</div>
 				<div id="iteration3-container">
-					<img
-						src="https://washuvis.github.io/cityliving/EvaluationCzar/images/Radius-graph.png"
-						class="iteration3"
-					/>
-					
-					<br />
-					<br>
-					<i> <strong>A sketch of a possbile radar graph for our neighborhood metrics, which we discarded.</strong></i>
-					<br>
 					<br>
 					<img
 						src="https://washuvis.github.io/cityliving/EvaluationCzar/images/CWE.png"
@@ -366,7 +357,16 @@
 					/>
 					<br>
 					<i> <strong>This is a full screen view of the entire Map. The Opacity for each neighborhood represents the magnitude of the metric at hand. In this case(purple), represents population density</strong></i>
-					<br />
+					<br /><br/>
+					<img
+						src="https://washuvis.github.io/cityliving/EvaluationCzar/images/Radius-graph.png"
+						class="iteration3"
+					/>
+					
+					<br>
+					<i> <strong>A sketch of a possbile radar graph for our neighborhood metrics, which we discarded.</strong></i>
+					<br>
+					<br/>
 					<img
 						src="images/parallel-plot.png"
 						class="iteration3"
@@ -391,14 +391,20 @@
 			<p><strong>Q:</strong> What did you learn about the data by
 			using your visualizations? How did you
 			answer your questions?</p>
-			<p><strong>A:</strong> So far, we have been able to learn about the fundamental metrics for each neighborhood.
-				This is easy to do with the opacity function attached to each score.
+			<p><strong>A:</strong> We learned that the data isn't consistent; we found several neighborhoods that did not 
+				have the Zillow Home Value Index. These were usually neighborhoods with very small populations. We also 
+				learned that two neighborhoods were not recognized by Walk Score, the site we got our mobility data from. So, 
+				the best data we got for those two neighborhoods was an estimate of the site's walkscore and bikescore, but 
+				no transit score. <br>
+				We also learned that the higher scores tend to be around the more populated areas. It implies an interesting 
+				story about economy and infrastructure based on where people congregate; or maybe vice-versa.
 			</p>
 			<p><strong>Q:</strong> How well does your visualization work,
 			and how could you further improve it?
 			</p>
 			<p>
-				<strong>A:</strong> The visuazliation works decently well at this moment. The imporvemtns to be made will come from drawing order, and potentially refactoring the code to load in the JSON faster
+				<strong>A:</strong> The city-level visualization works pretty well, and the design doesn't hurt the eyes. There is not yet much for 
+				the neighborhood visualization, but we have created a framework to begin work there.
 			</p>
 
 			<h2>Implementation:</h2>
@@ -418,9 +424,7 @@
 					showing the critical design and
 					interaction elements.
 				</p>
-				<p><strong>A:</strong> Provide clear and well-referenced images
-					showing the critical design and
-					interaction elements.
+				<p><strong>A:</strong> These are provided in the <a href="#iteration3-header">Iteration III</a> section.
 				</p>
 				
 
