@@ -22,49 +22,76 @@ CityMap = function (
 
 CityMap.prototype.initVis = function () {
   let vis = this;
-  vis.opacityScale = d3
-    .scaleLinear()
-    .domain([0, d3.max(vis.data, (d) => d.population)])
-    .range([0.2, 0.8]);
+
+  vis.opacityScale = d3.scaleLinear().range([0.2, 0.8]);
 
   vis.map = L.map(vis.parentElement).setView(vis.mapPosition, 12);
 
-  let neighborhoodLayer = L.geoJson(vis.geoFeatures, {
-    color: "#3F7484",
-    weight: 2,
-    style: choroplethStyle,
-    onEachFeature: onEachNeighborhood,
-  });
-
-  function onEachNeighborhood(n, layer) {
-    const parkIds = [80, 81, 82, 83, 84, 85, 86, 87];
-    const num = n.properties.NHD_NUM;
-    const index = num - 1;
-    const population = vis.data[index].population;
-    if (!parkIds.includes(num)) {
+  vis.onEachNeighborhood = function (n, layer) {
+    const category = $("#mapCategory").val();
+    const text = $("#mapCategory option:selected").text();
+    const parkIds = [80, 81, 82, 83, 84, 85, 86, 87, 88];
+    const nid = n.properties.NHD_NUM;
+    const index = nid - 1;
+    const targetValue = vis.data[index][category];
+    if (!parkIds.includes(nid)) {
       layer.bindTooltip(
         "<h2>" +
           vis.data[index].name +
-          "</h2><strong>Population: " +
-          population +
+          "</h2><strong>" +
+          text +
+          ": " +
+          targetValue +
           "</strong>",
         {
           sticky: true,
         }
       );
       layer.on("click", function () {
-        console.log(n.properties.NHD_NUM);
+        neighborhoodVis.updateVis(vis.data[index]);
       });
     }
-  }
+  };
 
-  function choroplethStyle(d) {
+  vis.choroplethStyle = function (d) {
+    const category = $("#mapCategory").val();
+    console.log(category);
+    vis.opacityScale.domain([
+      d3.min(vis.data, (d) => d[category]),
+      d3.max(vis.data, (d) => d[category]),
+    ]);
+    let style = {};
+    const colors = {
+      population: "purple",
+      walkscore: "#3F7484",
+      transitscore: "#00a5a5",
+      bikescore: "#d37a06",
+      zhvi: "#c40801",
+    };
     const index = d.properties.NHD_NUM - 1;
-    const population = vis.data[index].population;
-    return { fillOpacity: vis.opacityScale(population) };
-  }
+    if (d.properties.NHD_NUM < 80) {
+      const targetValue = vis.data[index][category];
+      style = {
+        color: colors[category],
+        fillOpacity: vis.opacityScale(targetValue),
+      };
+    } else {
+      style = {
+        color: colors[category],
+        fillOpacity: 0,
+      };
+    }
+    return style;
+  };
 
-  neighborhoodLayer.addTo(vis.map);
+  vis.neighborhoodLayer = L.geoJson(vis.geoFeatures, {
+    color: "#3F7484",
+    weight: 2,
+    style: vis.choroplethStyle,
+    onEachFeature: vis.onEachNeighborhood,
+  });
+
+  vis.neighborhoodLayer.addTo(vis.map);
   // console.log(vis.geoFeaturesMetro);
   // L.geoJson(vis.geoFeaturesMetro, {
   //     color: "black",
@@ -85,6 +112,10 @@ CityMap.prototype.initVis = function () {
     }
   ).addTo(vis.map);
 
+  $("#mapCategory").change(function () {
+    vis.updateVis();
+  });
+
   vis.wrangleData();
 };
 
@@ -104,4 +135,12 @@ CityMap.prototype.wrangleData = function () {
 
 CityMap.prototype.updateVis = function () {
   let vis = this;
+  vis.map.removeLayer(vis.neighborhoodLayer);
+  vis.neighborhoodLayer = L.geoJson(vis.geoFeatures, {
+    color: "#3F7484",
+    weight: 2,
+    style: vis.choroplethStyle,
+    onEachFeature: vis.onEachNeighborhood,
+  });
+  vis.neighborhoodLayer.addTo(vis.map);
 };

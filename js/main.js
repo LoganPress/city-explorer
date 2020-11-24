@@ -16,16 +16,6 @@ $.getJSON("data/Neighborhood_Boundaries.json", function (geoFeatures) {
         neighborhoodVis
       );
 
-      const margin = { left: 0, top: 0, right: 0, bottom: 0 };
-      const width = 700 - margin.left - margin.right;
-      const height = 700 - margin.top - margin.bottom;
-      let svg = d3
-        .select("#neighborhood-vis")
-        .append("svg")
-        .attr("width", width)
-        .attr("height", height)
-        .attr("id", "neighborhood-map");
-
       // let radarChart = RadarChart.chart();
       // let datum = nbhdStats.features[37];
 

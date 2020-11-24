@@ -25,9 +25,21 @@ NeighborhoodVis.prototype.initVis = function () {
 NeighborhoodVis.prototype.wrangleData = function () {
   let vis = this;
 
-  vis.updateVis();
+  const mockObject = {
+    nid: 0,
+    name: "",
+    population: 0,
+    walkscore: 0,
+    transitscore: 0,
+    bikescore: 0,
+    zhvi: 0,
+  };
+
+  vis.updateVis(mockObject);
 };
 
-NeighborhoodVis.prototype.updateVis = function () {
+NeighborhoodVis.prototype.updateVis = function (neighborhood) {
   let vis = this;
+
+  $("#neighborhood-title").text(neighborhood.name);
 };

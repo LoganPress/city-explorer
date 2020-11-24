@@ -11,11 +11,21 @@
 <body>
     <div class="container">
         <h1>City Explorer</h1>
-            <a href="EvaluationCzar/ProcessBook.html">Process Book</a>
-            <br/><br/><br/>
-        </div>
+        <a href="EvaluationCzar/ProcessBook.html">Process Book</a>
+        <br/><br/><br/>
+        <label for="mapCategory">Category to show on map:</label>
+        <select id="mapCategory">
+            <option value="population" selected>Population</option>
+            <option value="walkscore">Walk score</option>
+            <option value="transitscore">Transit score</option>
+            <option value="bikescore">Bike score</option>
+            <option value="zhvi">Home value index</option>
+        </select>
+        <br/><br/>
         <div id="city-vis-container"></div>
-        <div id="neighborhood-vis-container"></div>
+        <div id="neighborhood-vis-container">
+            <h2 id="neighborhood-title"></h2>
+        </div>
     </div>
     
     <script src="js/jquery.min.js"></script>
