@@ -63,7 +63,7 @@ CityMap.prototype.initVis = function () {
     let style = {};
     const colors = {
       population: "purple",
-      walkscore: "#3F7484",
+      walkscore: "#084d60",
       transitscore: "#00a5a5",
       bikescore: "#d37a06",
       zhvi: "#c40801",
