@@ -36,7 +36,16 @@ img {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-  height: 400px;
+  height: auto;
+  width: 600px;
+}
+
+.iteration3 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: auto;
   width: 600px;
 }
 

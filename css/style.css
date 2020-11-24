@@ -1,6 +1,9 @@
 body {
     text-align: center;
     background-color: antiquewhite;
+    font-family: "Gill Sans", "Gill Sans MT", "Calibri", sans-serif;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .leaflet-tooltip {
@@ -13,3 +16,4 @@ body {
     margin: auto auto auto auto;
     border: 1px solid black;
 }
+

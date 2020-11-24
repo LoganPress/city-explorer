@@ -61,10 +61,10 @@
 			</p>
 			<ul>
 				<li>
-					How easy is it get around with a car?
-					What about without a car? Is there
-					accessible public transit? How walkable
-					is each area? Is biking safe and easy?
+					How easy is it get around the area? Is
+					there accessible public transit? How
+					walkable is each area? Is biking safe
+					and easy?
 				</li>
 				<li>
 					What is the current status of the city's
@@ -78,17 +78,25 @@
 				</li>
 			</ul>
 
-			*** Insert Information HERE ***
-			<p></p>
-
 			<h2 id="data">Data</h2>
 			<p>
 				Our dataset consists of two data structures:
-				a file with geoJSON data that allows us to
-				overlay neighborhood boundaries, and JSON
+				a
+				<a
+					href="https://washuvis.github.io/cityliving/data/Neighborhood_Boundaries.json"
+					>file </a
+				>with geoJSON data that allows us to overlay
+				neighborhood boundaries, and another JSON
+				<a
+					href="https://washuvis.github.io/cityliving/data/Neighborhood_Stats.json"
+					>file
+				</a>
 				data that contains population, walk score,
-				bike score, transit score, and ZHVI (Zillow
-				Home Value Index) for each neighborhood.
+				bike score, transit score, and ZHVI (<a
+					href="https://www.zillow.com/research/zhvi-methodology-2019-highlights-26221/"
+				>
+					Zillow Home Value Index</a
+				>) for each neighborhood.
 			</p>
 			<div id="schema">
 				<ol>
@@ -130,26 +138,8 @@
 								<ul>
 									<li>
 										<a
-											href="https://www.zillow.com/howto/api/APIOverview.htm"
+											href="https://www.zillow.com/research/data/"
 											>Housing Data</a
-										>
-									</li>
-									<li>
-										<a
-											href="https://scaleserp.com/docs/search-api/results/places-results"
-											>Local Business
-											Data</a
-										>
-									</li>
-								</ul>
-							</li>
-							<li>
-								Environment:
-								<ul>
-									<li>
-										<a
-											href="https://weather.com/swagger-docs/call-for-code"
-											>Weather Data</a
 										>
 									</li>
 								</ul>
@@ -160,6 +150,28 @@
 			</div>
 
 			<h2>Exploratory Data Analysis</h2>
+			<p>
+				Our dataset consists of information from
+				many different sources that we pieced
+				together ourselves. Rather than finding a
+				dataset and exploring it to see how it could
+				be represented, we had some particular
+				design ideas in mind and created our dataset
+				so that we could execute those ideas. As a
+				result, we didn't find it necessary to
+				explore our data visually. We became
+				familiar with it just by the nature of how
+				we collected and synthesized it.<br /><br />
+				That said, we did gain some insights while
+				brainstorming how we would represent the
+				data on the website for other people to see.
+				We initially discussed some designs to view
+				the data for a single neighborhood (which
+				can be seen in Iteration III of Design
+				Evolution), and we quickly discovered that
+				our data wasn't particularly well-suited for
+				this. Instead we settled on
+			</p>
 			<ul>
 				<li>
 					What visualizations did you use to look
@@ -359,7 +371,7 @@
 					</h3>
 					<img
 						src="https://washuvis.github.io/cityliving/EvaluationCzar/images/Radius-graph.png"
-						class="iteration2"
+						class="iteration3"
 					/>
 					<br />
 					<br />
@@ -368,7 +380,7 @@
 					</h3>
 					<img
 						src="https://washuvis.github.io/cityliving/EvaluationCzar/images/mobility_neighborhood.png"
-						class="iteration2"
+						class="iteration3"
 					/>
 					<br />
 					<br />
