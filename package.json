@@ -1,0 +1,32 @@
+{
+  "name": "cityliving-1",
+  "version": "0.0.1",
+  "description": "The Industry Standard",
+  "main": "main.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node main.js",
+    "dev": "cross-env NODE_ENV=development nodemon main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/washuvis/cityliving.git"
+  },
+  "author": "Matt Halom",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/washuvis/cityliving/issues"
+  },
+  "homepage": "https://github.com/washuvis/cityliving#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jquery": "^3.5.1",
+    "jsdom": "^16.4.0",
+    "leaflet": "^1.7.1",
+    "topojson": "^3.0.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "nodemon": "^2.0.6"
+  }
+}
