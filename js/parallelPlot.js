@@ -87,9 +87,17 @@ ParallelPlot.prototype.updateVis = function(_neighborhood) {
     if (vis.neighborhood.nid != 0) {
         vis.data.forEach((d) => {
             if (vis.neighborhood.nid != d.nid) {
-                $("#parallel-path-" + d.nid).css({ "stroke": "#24A0ED", "stroke-width": 1 });
+                $("#parallel-path-" + d.nid).css({
+                    "stroke": "#24A0ED",
+                    "stroke-width": 1,
+                    "opacity": 0.2
+                });
             } else {
-                $("#parallel-path-" + d.nid).css({ "stroke": "red", "stroke-width": 2 });
+                $("#parallel-path-" + d.nid).css({
+                    "stroke": "red",
+                    "stroke-width": 2,
+                    "opacity": 1
+                });
             }
         });
     }
