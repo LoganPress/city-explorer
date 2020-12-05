@@ -58,6 +58,7 @@ ParallelPlot.prototype.initVis = function() {
         .attr("fill", "none")
         .attr("stroke", "#24A0ED")
         .attr("stroke-width", 1)
+        .attr("opacity", 0.6)
         .attr("class", "parallel-path")
         .attr("id", (d) => "parallel-path-" + d.nid);
     
