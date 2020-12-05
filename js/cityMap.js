@@ -23,7 +23,7 @@ CityMap = function (
 CityMap.prototype.initVis = function () {
   let vis = this;
 
-  vis.opacityScale = d3.scaleLinear().range([0.2, 0.8]);
+  vis.opacityScale = d3.scaleLinear().range([0.1, 0.9]);
 
   vis.map = L.map(vis.parentElement).setView(vis.mapPosition, 12);
 
@@ -55,7 +55,6 @@ CityMap.prototype.initVis = function () {
 
   vis.choroplethStyle = function (d) {
     const category = $("#mapCategory").val();
-    console.log(category);
     vis.opacityScale.domain([
       d3.min(vis.data, (d) => d[category]),
       d3.max(vis.data, (d) => d[category]),
@@ -64,8 +63,8 @@ CityMap.prototype.initVis = function () {
     const colors = {
       population: "purple",
       walkscore: "#084d60",
-      transitscore: "#00a5a5",
-      bikescore: "#d37a06",
+      transitscore: "#00a5a5", 
+      bikescore: "#b0772c", //#d37a06, #db902e, #c40801
       zhvi: "#c40801",
     };
     const index = d.properties.NHD_NUM - 1;

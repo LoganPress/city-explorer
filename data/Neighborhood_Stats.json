@@ -176,6 +176,7 @@
             "name": "Kosciusko",
             "population":6,
             "walkscore": 38,
+            "transitscore": 0,
             "bikescore": 40,
             "zhvi":190720
         },
@@ -356,6 +357,7 @@
             "name": "Kings Oak",
             "population":180,
             "walkscore": 40,
+            "transitscore": 0,
             "bikescore": 74,
             "zhvi":211516
         },   
