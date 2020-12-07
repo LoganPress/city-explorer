@@ -716,55 +716,55 @@
             "nid": 80,
             "name": "Carondelet Park",
             "population":0,
-            "zhvi":190720
+            "zhvi":0
         },
         {
             "nid": 81,
             "name": "Tower Grove Park",
             "population":0,
-            "zhvi":190720
+            "zhvi":0
         },  
         {
             "nid": 82,
             "name": "Forest Park",
             "population":0,
-            "zhvi":190720
+            "zhvi":0
         },
         {
             "nid": 83,
             "name": "Fairground Park",
             "population":0,
-            "zhvi":190720
+            "zhvi":0
         },
         {
             "nid": 84,
             "name": "Penrose Park",
             "population":0,
-            "zhvi":190720
+            "zhvi":0
         }, 
         {
             "nid": 85,
             "name": "O'Fallon Park",
             "population":0,
-            "zhvi":190720
+            "zhvi":0
         }, 
         {
             "nid": 86,
             "name": "Bellefontaine/Calvary Cemetery",
             "population":0,
-            "zhvi":190720
+            "zhvi":0
         },
         {
             "nid": 87,
             "name": "Missouri Botanical Garden",
-            "population":10,
-            "zhvi":190720
+            "population":0,
+            "zhvi":0
         },
         {
             "nid": 88,
             "name": "Willmore Park",
             "population":0,
-            "zhvi":190720
+            "zhvi":0
         }
     ]
 }
