@@ -64,8 +64,8 @@ CityMap.prototype.initVis = function () {
       population: "purple",
       walkscore: "#084d60",
       transitscore: "#00a5a5", 
-      bikescore: "#b0772c", //#d37a06, #db902e, #c40801
-      zhvi: "#c40801",
+      bikescore: "#db9c48", //#d37a06, #db902e, #c40801, #b0772c
+      zhvi: "#c40801"
     };
     const index = d.properties.NHD_NUM - 1;
     if (d.properties.NHD_NUM < 80) {

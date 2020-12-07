@@ -160,7 +160,7 @@
             "walkscore": 71,
             "transitscore": 39,
             "bikescore": 64,
-            "zhvi":190720
+            "zhvi":70100
         },
         {
             "nid": 19,
@@ -169,7 +169,7 @@
             "walkscore": 82,
             "transitscore": 45,
             "bikescore": 65,
-            "zhvi":190720
+            "zhvi":102700
         },
         {
             "nid": 20,
@@ -178,7 +178,7 @@
             "walkscore": 38,
             "transitscore": 0,
             "bikescore": 40,
-            "zhvi":190720
+            "zhvi":0
         },
         {
             "nid": 21,
@@ -440,7 +440,7 @@
             "walkscore": 62,
             "transitscore": 49,
             "bikescore": 66,
-            "zhvi":190720
+            "zhvi":93600
         },
         {
             "nid": 50,
@@ -449,7 +449,7 @@
             "walkscore": 57,
             "transitscore": 43,
             "bikescore": 55,
-            "zhvi":190720
+            "zhvi":18700
         },
         {
             "nid": 51,
@@ -458,7 +458,7 @@
             "walkscore": 73,
             "transitscore": 45,
             "bikescore": 70,
-            "zhvi":190720
+            "zhvi":78600
         },
         {
             "nid": 52,
@@ -467,7 +467,7 @@
             "walkscore": 67,
             "transitscore": 43,
             "bikescore": 62,
-            "zhvi":190720
+            "zhvi":40000
         },
         {
             "nid": 53,
@@ -476,7 +476,7 @@
             "walkscore": 80,
             "transitscore": 46,
             "bikescore": 64,
-            "zhvi":190720
+            "zhvi":15000
         },
         {
             "nid": 54,
@@ -485,7 +485,7 @@
             "walkscore": 67,
             "transitscore": 46,
             "bikescore": 62,
-            "zhvi":190720
+            "zhvi":78500
         },
         {
             "nid": 55,
@@ -494,7 +494,7 @@
             "walkscore": 65,
             "transitscore": 43,
             "bikescore": 61,
-            "zhvi": 190720
+            "zhvi": 63400
         }, 
         {
             "nid": 56,
@@ -512,7 +512,7 @@
             "walkscore": 59,
             "transitscore": 43,
             "bikescore": 63,
-            "zhvi":190720
+            "zhvi":29000
         }, 
         {
             "nid": 58,
@@ -530,7 +530,7 @@
             "walkscore": 68,
             "transitscore": 47,
             "bikescore": 63,
-            "zhvi":190720
+            "zhvi":40000
         },  
         {
             "nid": 60,
@@ -548,7 +548,7 @@
             "walkscore": 70,
             "transitscore": 54,
             "bikescore": 61,
-            "zhvi":190720
+            "zhvi":0
         },  
         {
             "nid": 62,
@@ -557,7 +557,7 @@
             "walkscore": 75,
             "transitscore": 61,
             "bikescore": 64,
-            "zhvi":190720
+            "zhvi":152400
         },  
         {
             "nid": 63,
@@ -566,7 +566,7 @@
             "walkscore": 69,
             "transitscore": 42,
             "bikescore": 64,
-            "zhvi":190720
+            "zhvi":24000
         },
         {
             "nid": 64,
@@ -575,7 +575,7 @@
             "walkscore": 40,
             "transitscore": 42,
             "bikescore": 62,
-            "zhvi":190720
+            "zhvi":0
         },  
         {
             "nid": 65,
@@ -584,7 +584,7 @@
             "walkscore": 57,
             "transitscore": 44,
             "bikescore": 57,
-            "zhvi":190720
+            "zhvi":31100
         },  
         {
             "nid": 66,
@@ -593,7 +593,7 @@
             "walkscore": 57,
             "transitscore": 46,
             "bikescore": 59,
-            "zhvi":190720
+            "zhvi":110000
         },
         {
             "nid": 67,
@@ -602,7 +602,7 @@
             "walkscore": 65,
             "transitscore": 47,
             "bikescore": 62,
-            "zhvi":190720
+            "zhvi":0
         },
         {
             "nid": 68,
@@ -629,7 +629,7 @@
             "walkscore": 55,
             "transitscore": 38,
             "bikescore": 51,
-            "zhvi":190720
+            "zhvi":0
         }, 
         {
             "nid": 71,
@@ -656,7 +656,7 @@
             "walkscore": 52,
             "transitscore": 42,
             "bikescore": 57,
-            "zhvi":190720
+            "zhvi":0
         },    
         {
             "nid": 74,
@@ -665,7 +665,7 @@
             "walkscore": 52,
             "transitscore": 44,
             "bikescore": 53,
-            "zhvi":190720
+            "zhvi":27000
         },  
         {
             "nid": 75,
@@ -674,7 +674,7 @@
             "walkscore": 22,
             "transitscore": 33,
             "bikescore": 9,
-            "zhvi":190720
+            "zhvi":185000
         },
         {
             "nid": 76,
@@ -683,7 +683,7 @@
             "walkscore": 60,
             "transitscore": 40,
             "bikescore": 59,
-            "zhvi":190720
+            "zhvi":24950
         }, 
         {
             "nid": 77,
@@ -701,7 +701,7 @@
             "walkscore": 62,
             "transitscore": 46,
             "bikescore": 60,
-            "zhvi":190720
+            "zhvi":29000
         },
         {
             "nid": 79,
@@ -710,7 +710,7 @@
             "walkscore": 14,
             "transitscore": 30,
             "bikescore": 55,
-            "zhvi":190720
+            "zhvi":0
         }, 
         {
             "nid": 80,

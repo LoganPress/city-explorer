@@ -13,8 +13,8 @@ Histogram.prototype.initVis = function() {
     
     vis.margin = { top: 20, right: 10, bottom: 60, left: 50 };
 
-    vis.width = 900 - vis.margin.right - vis.margin.left;
-    vis.height = 500 - vis.margin.top - vis.margin.bottom;
+    vis.width = 700 - vis.margin.right - vis.margin.left;
+    vis.height = 700 - vis.margin.top - vis.margin.bottom;
     vis.padding = 20;
 
     vis.svg = d3.select("#" + vis.parentElement)
@@ -30,8 +30,8 @@ Histogram.prototype.initVis = function() {
         
             
 
-    vis.y = d3.scaleLinear()        
-        .range([vis.height, 0]);
+    vis.y = d3.scaleLinear()
+        .range([vis.height, vis.padding]);
 
     vis.xAxis = d3.axisBottom();
 
@@ -60,6 +60,14 @@ Histogram.prototype.initVis = function() {
         .style("border-radius", "5px")
         .style("padding", "10px")
 
+    vis.ranges = {
+        "population": [0, 16000],
+        "walkscore": [0, 100],
+        "transitscore": [0, 100],
+        "bikescore": [0, 100],
+        "zhvi": [0, 450000]
+    };
+
     vis.updateVis();
 }
 
@@ -79,8 +87,10 @@ Histogram.prototype.updateVis = function(feature) {
     console.log(category);
 
     vis.x
-        .domain([0, d3.max(vis.data, (d) => d[category])]);
+        .domain([vis.ranges[category][0], vis.ranges[category][1]]);
     
+    console.log(d3.max(vis.data, (d) => d[category]));
+
     vis.histogram.value((d) => +d[category])
         .domain(vis.x.domain())
         .thresholds(vis.x.ticks(14));
@@ -123,7 +133,6 @@ Histogram.prototype.updateVis = function(feature) {
         .style("left", (d3.mouse(this)[0]+20) + "px")
         .style("top", (d3.mouse(this)[1]) + "px")
         }
-        // A function that change this tooltip when the leaves a point: just need to set opacity to 0 again
     
     let hideTooltip = function(d) {
         tooltip
@@ -145,7 +154,7 @@ Histogram.prototype.updateVis = function(feature) {
                 case "population": return "purple";
                 case "walkscore": return "#084d60";
                 case "transitscore": return "#00a5a5"; 
-                case "bikescore": return "#b0772c"; //#d37a06, #db902e, #c40801
+                case "bikescore": return "#db9c48"; //#d37a06, #db902e, #c40801, #b0772c
                 case "zhvi": return "#c40801";
             }
         })
@@ -153,7 +162,14 @@ Histogram.prototype.updateVis = function(feature) {
         .attr("x", (d) => vis.x(d.x0) + 1)
         .attr("y", vis.y(0))
         .attr("height", 0)
-        .attr("width", (d) => vis.x(d["x1"]) - vis.x(d["x0"]) - 1)
+        .attr("width", function(d){
+           let width = vis.x(d["x1"]) - vis.x(d["x0"]) - 1;
+           if (width > 0) {
+               return width;
+            }else{
+                return 0;
+            }
+        })
         .transition()
         .attr("y", (d) => vis.y(d["length"]))
         .attr("height", (d) => vis.height - vis.y(d["length"]));

@@ -10,10 +10,14 @@ body {
     padding-top: 0px;
 }
 
+.vis-container {
+    display: inline-block;
+    margin: 20px;
+}
+
 #city-vis-container {
-    width: 50%;
-    height: 800px;
-    margin: auto auto auto auto;
+    width: 40vw;
+    height: 700px;
     border: 1px solid black;
 }
 

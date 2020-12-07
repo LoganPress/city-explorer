@@ -13,7 +13,7 @@ ParallelPlot = function(_parentElement, _data, _neighborhood) {
 ParallelPlot.prototype.initVis = function() {
     let vis = this;
 
-    vis.margin = { left: 0, top: 10, right: 0, bottom: 15 };
+    vis.margin = { left: 0, top: 15, right: 0, bottom: 20 };
     vis.height = 400 + vis.margin.top + vis.margin.bottom;
     vis.width = 800 + vis.margin.left + vis.margin.right;
 
@@ -27,21 +27,41 @@ ParallelPlot.prototype.initVis = function() {
 
     vis.data = vis.data.filter((d) => !parkIds.includes(d.nid));
 
-    vis.axes = {
-        "population": "Population",
-        "walkscore": "Walk Score",
-        "transitscore": "Transit Score",
-        "bikescore": "Bike Score",
-        "zhvi": "Home Value Index"
-    };
+    vis.axes = [
+        {
+            id: "population",
+            name: "Population",
+            range: [0, 16000]
+        },
+        {
+            id: "walkscore",
+            name: "Walk Score",
+            range: [0, 100]
+        },
+        {
+            id: "transitscore",
+            name: "Transit Score",
+            range: [0, 100]
+        },
+        {
+            id: "bikescore",
+            name: "Bike Score",
+            range: [0, 100]
+        },
+        {
+            id: "zhvi",
+            name: "Home Value Estimate",
+            range: [0, 450000]
+        }
+    ];
 
     vis.scales = {};
 
-    Object.keys(vis.axes).forEach(function(axis) {
-        vis.scales[axis] = d3.scaleLinear()
+    vis.axes.forEach(function(axis) {
+        vis.scales[axis.id] = d3.scaleLinear()
             .domain([
-                d3.min(vis.data, (d) => d[axis]), 
-                d3.max(vis.data, (d) => d[axis])
+                axis.range[0],
+                axis.range[1]
             ])
             .range([vis.height - vis.margin.bottom, vis.margin.top]);
     });
@@ -49,10 +69,15 @@ ParallelPlot.prototype.initVis = function() {
     vis.horizontal = d3.scalePoint()
         .range([0, vis.width])
         .padding(1)
-        .domain(Object.keys(vis.axes));
+        .domain(vis.axes.map((d) => d.id));
     
     function path(d) {
-        return d3.line()(Object.keys(vis.axes).map((axis) => [vis.horizontal(axis), vis.scales[axis](d[axis]) + vis.margin.top]));
+        return d3.line()(vis.axes.map(function(axis) {
+            return [
+                vis.horizontal(axis.id),
+                vis.scales[axis.id](d[axis.id]) + vis.margin.top
+            ];
+        }));
     }
 
     vis.series = vis.svg.selectAll(".parallel-path")
@@ -68,15 +93,15 @@ ParallelPlot.prototype.initVis = function() {
         .attr("id", (d) => "parallel-path-" + d.nid);
     
     vis.axisGroups = vis.svg.selectAll("g")
-        .data(Object.keys(vis.axes))
+        .data(vis.axes)
         .enter()
         .append("g")
-            .attr("transform", (d) => "translate(" + vis.horizontal(d) + "," + vis.margin.top + ")")
+            .attr("transform", (d) => "translate(" + vis.horizontal(d.id) + "," + vis.margin.top + ")")
             .each(function(d) {
-                d3.select(this).call(d3.axisLeft().scale(vis.scales[d]));
+                d3.select(this).call(d3.axisLeft().scale(vis.scales[d.id]));
             })
         .append("text")
-            .text((d) => vis.axes[d])
+            .text((d) => d.name)
             .style("text-anchor", "middle")
             .style("font-weight", "bold")
             .style("font-size", "12px")
