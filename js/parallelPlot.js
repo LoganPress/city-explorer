@@ -13,10 +13,9 @@ ParallelPlot = function(_parentElement, _data, _neighborhood) {
 ParallelPlot.prototype.initVis = function() {
     let vis = this;
 
-    vis.margin = { left: 0, top: 0, right: 0, bottom: 0 };
-    vis.height = 400 - vis.margin.top - vis.margin.bottom;
-    vis.width = 800 - vis.margin.left - vis.margin.right;
-    vis.padding = 5;
+    vis.margin = { left: 0, top: 10, right: 0, bottom: 15 };
+    vis.height = 400 + vis.margin.top + vis.margin.bottom;
+    vis.width = 800 + vis.margin.left + vis.margin.right;
 
     vis.svg = d3.select("#" + vis.parentElement)
         .append("svg")
@@ -28,26 +27,32 @@ ParallelPlot.prototype.initVis = function() {
 
     vis.data = vis.data.filter((d) => !parkIds.includes(d.nid));
 
-    vis.axes = ["population", "walkscore", "transitscore", "bikescore", "zhvi"];
+    vis.axes = {
+        "population": "Population",
+        "walkscore": "Walk Score",
+        "transitscore": "Transit Score",
+        "bikescore": "Bike Score",
+        "zhvi": "Home Value Index"
+    };
 
     vis.scales = {};
 
-    vis.axes.forEach(function(axis) {
+    Object.keys(vis.axes).forEach(function(axis) {
         vis.scales[axis] = d3.scaleLinear()
             .domain([
                 d3.min(vis.data, (d) => d[axis]), 
                 d3.max(vis.data, (d) => d[axis])
             ])
-            .range([vis.height - vis.padding, vis.padding]);
+            .range([vis.height - vis.margin.bottom, vis.margin.top]);
     });
 
     vis.horizontal = d3.scalePoint()
         .range([0, vis.width])
         .padding(1)
-        .domain(vis.axes);
+        .domain(Object.keys(vis.axes));
     
     function path(d) {
-        return d3.line()(vis.axes.map((axis) => [vis.horizontal(axis), vis.scales[axis](d[axis])]));
+        return d3.line()(Object.keys(vis.axes).map((axis) => [vis.horizontal(axis), vis.scales[axis](d[axis]) + vis.margin.top]));
     }
 
     vis.series = vis.svg.selectAll(".parallel-path")
@@ -63,13 +68,20 @@ ParallelPlot.prototype.initVis = function() {
         .attr("id", (d) => "parallel-path-" + d.nid);
     
     vis.axisGroups = vis.svg.selectAll("g")
-        .data(vis.axes)
+        .data(Object.keys(vis.axes))
         .enter()
         .append("g")
-        .attr("transform", (d) => "translate(" + vis.horizontal(d) + ", 0)")
-        .each(function(d) {
-            d3.select(this).call(d3.axisLeft().scale(vis.scales[d]));
-        });
+            .attr("transform", (d) => "translate(" + vis.horizontal(d) + "," + vis.margin.top + ")")
+            .each(function(d) {
+                d3.select(this).call(d3.axisLeft().scale(vis.scales[d]));
+            })
+        .append("text")
+            .text((d) => vis.axes[d])
+            .style("text-anchor", "middle")
+            .style("font-weight", "bold")
+            .style("font-size", "12px")
+            .attr("y", 0)
+            .attr("fill", "black");
 
     vis.wrangleData();
 }
