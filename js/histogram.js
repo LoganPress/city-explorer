@@ -13,9 +13,9 @@ Histogram.prototype.initVis = function() {
     
     vis.margin = { top: 20, right: 10, bottom: 60, left: 50 };
 
-    vis.width = 700 - vis.margin.right - vis.margin.left;
+    vis.width = 600 - vis.margin.right - vis.margin.left;
     vis.height = 700 - vis.margin.top - vis.margin.bottom;
-    vis.padding = 30;
+    vis.padding = 50;
 
     vis.svg = d3.select("#" + vis.parentElement)
         .append("svg")
@@ -61,19 +61,31 @@ Histogram.prototype.initVis = function() {
         .style("padding", "10px")
 
     vis.ranges = {
-        "population": [0, 20000],
+        "population": [0, 16000],
         "walkscore": [0, 100],
         "transitscore": [0, 100],
         "bikescore": [0, 100],
-        "zhvi": [0, 500000]
+        "zhvi": [0, 450000]
     };
 
     vis.title = vis.svg
         .append("text")
-        .attr("x", vis.width/2 - 50)
+        .attr("x", vis.width/2 - 75)
         .attr("y", 20)
         .attr("class", "hist-title")
         .style("font-size", 18);
+
+    vis.xlabel = vis.svg
+        .append("text")
+        .attr("x", vis.width/2 - 20)
+        .attr("y", vis.height + vis.padding - 5)
+        .style("font-size", 14);
+
+    vis.ylabel = vis.svg
+        .append("text")
+        .text("Count")
+        .attr("transform", "translate(10, 350)rotate(-90)")
+        .style("font-size", 14);
 
     vis.updateVis();
 }
@@ -188,7 +200,15 @@ Histogram.prototype.updateVis = function(feature) {
 
     const catString = $("#mapCategory option:selected").text();
 
-
-
     vis.title.text("Distribution of " + catString);
+    
+    let xlabels = {
+        "population": "People",
+        "walkscore": "Score out of 100",
+        "transitscore": "Score out of 100",
+        "bikescore": "Score out of 100",
+        "zhvi": "Dollars"
+    }
+
+    vis.xlabel.text(xlabels[category]);
 }

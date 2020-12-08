@@ -7,8 +7,7 @@ body {
   text-align: justify;
 }
 
-h1,
-h3 {
+h1, h3 {
   text-align: center;
 }
 
@@ -44,6 +43,12 @@ img {
   width: 50%;
   height: auto; 
   /* width: 600px; */
+}
+
+.iteration4 {
+  height: 275px;
+  width: 425px;
+  margin: 10px;
 }
 
 table {

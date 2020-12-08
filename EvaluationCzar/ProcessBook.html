@@ -70,10 +70,24 @@
 					and easy?
 				</li>
 				<li>
-					What is the current status of the city's
-					economy? How affordable is it? What is
-					the local business scene like?
+					Which neighborhoods perform best in 
+					the available categories?
 				</li>
+				<li>
+					What does the distribution of a given metric look
+					like across all neighborhoods?
+				</li>
+				<li>
+					What kind of geographic clusters exist, where neighborhoods
+					have similar values as nearby neighborhoods for a 
+					certain metric?
+				</li>
+					For users that are familiar with St. Louis and its neighborhoods,
+					how do the visualizations and available metrics either reinforce
+					or contradict  one's preconceived notions of different areas of St. Louis?
+				</li>
+					
+
 			</ul>
 
 			<h2 id="data">Data</h2>
@@ -385,47 +399,92 @@
 					<br />
 					
 				</div>
+				<h4 id="iteration4-header">Iteration IV -</h4>
+				<div id="iteration4-text">
+					<p>
+						For this iteration, we added two new views to the website, based on our reflection on the last milestone. 
+						One of these is the neighborhood histogram - this graph creates bins based on whichever category is 
+						selected by the user, and plots how many neighborhoods have a value within each of those bins. When the 
+						category is changed, a transition is triggered as the bars change to reflect the category. The second 
+						visualization is a parallel plot, similar to the one diagrammed in Iteration III. This parallel plot has 
+						a series for each neighborhood, and there is one axis for each category. When a user selects a 
+						neighborhood in the map, the name of the neighborhood appears above the parallel plot, and the line 
+						corresponding to the selected neighborhood becomes highlighted in red. When this occurs, all other lines 
+						become more transparent.
+					</p>
+					<p>
+						In addition to these two visualizations, we polished the original map. We removed the original opacity 
+						scale in favor of a new color scale. Along with this new scale we added a legend that runs vertically 
+						along the length of the map, and changes for each different category based on user selection. Finally, 
+						for neighborhoods for which we didn't have data for a certain category, we ommitted those from the range 
+						of values when calculating the scales, as well as from the shading in the choropleth map. When the user 
+						hovers over such neighborhoods, they now see a value of "Data unavailable" in the tooltip. The remaining 
+						work between this iteration and the final deliverable we believe will be mostly polish and making sure 
+						the visualization effectively answers the users' questions. Hopefully in this time, we will do plenty of 
+						field testing and iterative adjustments.
+					</p>
+				</div>
+				<div id="iteration4-container">
+					<h3>Neighborhood Visualizations:</h3><br>
+					<img src="images/iteration4-population.png" class="iteration4" />
+					<img src="images/iteration4-walkscore.png" class="iteration4" />
+					<img src="images/iteration4-economy.png" class="iteration4" /><br>
+					<h3>Parallel Plot:</h3><br>
+					<img src="images/iteration4-parallel-unselected.png" class="iteration4" />
+					<img src="images/iteration4-parallel-selected.png" class="iteration4" />
+				</div>
 			</div>
 
 			<h2>Evaluation:</h2>
 			<p><strong>Q:</strong> What did you learn about the data by
 			using your visualizations? How did you
 			answer your questions?</p>
-			<p><strong>A:</strong> We learned that the data isn't consistent; we found several neighborhoods that did not 
-				have the Zillow Home Value Index. These were usually neighborhoods with very small populations. We also 
-				learned that two neighborhoods were not recognized by Walk Score, the site we got our mobility data from. So, 
-				the best data we got for those two neighborhoods was an estimate of the site's walkscore and bikescore, but 
-				no transit score. <br>
-				We also learned that the higher scores tend to be around the more populated areas. It implies an interesting 
-				story about economy and infrastructure based on where people congregate; or maybe vice-versa.
+			<p><strong>A:</strong> We learned that the "better" scores aren't always around the populated areas. We figured that 
+				we may have seen a stronger correlation, given our intuition about certain metrics scaling as population grows (see: 
+				Scale by Geoffrey West), but the individual St. Louis neighborhoods tell a more complex story. One of the starkest 
+				metrics to look at is the Home Value Estimate. There is a noticeable contrast between the north and south halves of 
+				St. Louis, and that isn't just due to the missing data. The estimates in the northernmost neighborhoods are 
+				significantly lower than their southern counterparts. The particular neighborhoods with missing home estimate values even
+				reinforce this observation in a way; most of them are located north of Delmar Blvd., and we couldn't find home value estimates
+				because homes just aren't being sold in those neighborhoods. This visualization really highlights the notion of the 
+				"Delmar divide" and the economic disparities in the region. It's also clear through looking at the transit score 
+				that the metro runs through the middle of the city east-west.
 			</p>
 			<p><strong>Q:</strong> How well does your visualization work,
 			and how could you further improve it?
 			</p>
-			<p>
-				<strong>A:</strong> The city-level visualization works pretty well, and the design doesn't hurt the eyes. There is not yet much for 
-				the neighborhood visualization, but we have created a framework to begin work there.
-			</p>
+			<p><strong>A:</strong> The visualization does a really good job at giving a high-level view of the city with regards 
+			to quick, easy metrics. While this makes it easy for the user to gauge the area, it can also be a weakness because the 
+			metrics are not comprehensive. They doesn't give the user an in-depth understanding of the city's dynamics, but to do 
+			that is a tall order. I think the distributions of the neighborhoods with respect to each category is also very clear; 
+			both the histogram and the parallel plot make the distributions easily understood.</p>
 
 			<h2>Implementation:</h2>
 			
-				<p><strong>Q:</strong> Describe the intent and functionality of
-					the interactive visualizations you
-					implemented.
-				</p>
+			<p><strong>Q:</strong> Describe the intent and functionality of
+				the interactive visualizations you
+				implemented.
+			</p>
 
-				<p><strong>A:</strong> The intent is to provide a space for the user to explore different
-					metrics related to the city on a neighborhood-level granularity, which can answer 
-					questions about the city's livability and workability with regards to these metrics.
-				</p>
+			<p><strong>A:</strong> The intent is to provide a space for the user to explore different
+				metrics related to the city on a neighborhood-level granularity, which can answer 
+				questions about the city's livability and workability with regards to these metrics. 
+				The choropleth map provides a visual breakdown of different scores and their gradient 
+				from one geographical area to the next; so, a user could see geographic clusters and 
+				patterns where nearby neighborhoods are similar or different. The histogram also shows 
+				the distribution of neighborhoods in general, so a user could potentially see how one 
+				neighborhood stacks up to the others. When a user is interested in a particular 
+				neighborhood, they can see all the metrics of the neighborhood at once on the parallel 
+				plot, and conclude whether it is similar or different than the rest.
+			</p>
 
-					
-				<p><strong>Q:</strong> Provide clear and well-referenced images
-					showing the critical design and
-					interaction elements.
-				</p>
-				<p><strong>A:</strong> These are provided in the <a href="#iteration3-header">Iteration III</a> section.
-				</p>
+				
+			<p><strong>Q:</strong> Provide clear and well-referenced images
+				showing the critical design and
+				interaction elements.
+			</p>
+			<p><strong>A:</strong> These are provided in the <a href="#iteration3-header">Iteration III</a> and <a href="#iteration4-header">Iteration IV</a> sections.
+			</p>
 				
 
 			<h2>Project Timeline</h2>

@@ -49,9 +49,9 @@ CityMap.prototype.initVis = function () {
 
   vis.ranges = {
     "population": [0, 16000],
-    "walkscore": [0, 100],
-    "transitscore": [0, 100],
-    "bikescore": [0, 100],
+    "walkscore": [10, 90],
+    "transitscore": [30, 70],
+    "bikescore": [5, 85],
     "zhvi": [0, 450000]
   };
 
@@ -63,9 +63,11 @@ CityMap.prototype.initVis = function () {
     const parkIds = [80, 81, 82, 83, 84, 85, 86, 87, 88];
     const nid = n.properties.NHD_NUM;
     const index = nid - 1;
-    const targetValue = vis.data[index][category];
+    let targetValue = vis.data[index][category];
     if (!parkIds.includes(nid)) {
       if (targetValue > 0){
+        // Following regex from https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
+        targetValue = targetValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         layer.bindTooltip(
           "<h2>" +
             vis.data[index].name +
@@ -102,10 +104,10 @@ CityMap.prototype.initVis = function () {
 
     vis.colorScale
       .domain([
-        d3.min(vis.data.filter((d) => d[category] > 0), (d) => d[category]),
-        d3.max(vis.data, (d) => d[category])
-        // vis.ranges[category][0],
-        // vis.ranges[category][1]
+        // d3.min(vis.data.filter((d) => d[category] > 0), (d) => d[category]),
+        // d3.max(vis.data, (d) => d[category])
+        vis.ranges[category][0],
+        vis.ranges[category][1]
       ])
       .range(vis.colorRanges[category]);
 
