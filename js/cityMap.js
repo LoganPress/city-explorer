@@ -23,7 +23,37 @@ CityMap = function (
 CityMap.prototype.initVis = function () {
   let vis = this;
 
-  vis.opacityScale = d3.scaleLinear().range([0.1, 0.9]);
+  vis.colorRanges = {
+    "population": ["#bd87bd", "#ad73ad", "#9d5f9c", "#8d4b8d", "#7d367d", "#6e216d", "#5e035e"],
+    "walkscore": ["#d6f1fd", "#b3d2e0", "#92b4c5", "#7197aa", "#507a90", "#2f5f76", "#01455e"],
+    "transitscore": ["#c3ebd3", "#a6d8b9", "#8ac59f", "#6eb286", "#539f6c", "#358d53", "#0b7a3a"],
+    "bikescore": ["#ffc577", "#f4b061", "#e99c4d", "#dd8739", "#d27127", "#c65b14", "#ba4400"],
+    "zhvi": ["#c17775", "#c56965", "#c85b55", "#c94c43", "#c93c31", "#c7281c", "#c40801"]
+  };
+  vis.colorScales = {}
+  vis.colorScale = d3.scaleQuantile();
+  
+  vis.legendSvg = d3.select("#city-vis-legend")
+    .append("svg")
+    .attr("height", 505)
+    .attr("width", "10vw")
+    .attr("id", "legend-svg");
+
+  vis.legendQuantile = d3.legendColor()
+    .shapeHeight(70)
+    .labelFormat(d3.format(".0f"))
+    .cells(7)
+    .orient('vertical');
+
+  vis.legendGroup = vis.legendSvg.append("g");
+
+  vis.ranges = {
+    "population": [0, 16000],
+    "walkscore": [0, 100],
+    "transitscore": [0, 100],
+    "bikescore": [0, 100],
+    "zhvi": [0, 450000]
+  };
 
   vis.map = L.map(vis.parentElement).setView(vis.mapPosition, 12);
 
@@ -35,18 +65,32 @@ CityMap.prototype.initVis = function () {
     const index = nid - 1;
     const targetValue = vis.data[index][category];
     if (!parkIds.includes(nid)) {
-      layer.bindTooltip(
-        "<h2>" +
-          vis.data[index].name +
-          "</h2><strong>" +
-          text +
-          ": " +
-          targetValue +
-          "</strong>",
-        {
-          sticky: true,
-        }
-      );
+      if (targetValue > 0){
+        layer.bindTooltip(
+          "<h2>" +
+            vis.data[index].name +
+            "</h2><strong>" +
+            text +
+            ": " +
+            targetValue +
+            "</strong>",
+          {
+            sticky: true,
+          }
+        );
+      } else{
+        layer.bindTooltip(
+          "<h2>" +
+            vis.data[index].name +
+            "</h2><strong>" +
+            text +
+            ": Data unavailable </strong>",
+          {
+            sticky: true,
+          }
+        );
+      }
+      
       layer.on("click", function () {
         neighborhoodVis.updateVis(vis.data[index]);
       });
@@ -55,36 +99,36 @@ CityMap.prototype.initVis = function () {
 
   vis.choroplethStyle = function (d) {
     const category = $("#mapCategory").val();
-    vis.opacityScale.domain([
-      d3.min(vis.data, (d) => d[category]),
-      d3.max(vis.data, (d) => d[category]),
-    ]);
-    let style = {};
-    const colors = {
-      population: "purple",
-      walkscore: "#084d60",
-      transitscore: "#00a5a5", 
-      bikescore: "#db9c48", //#d37a06, #db902e, #c40801, #b0772c
-      zhvi: "#c40801"
+
+    vis.colorScale
+      .domain([
+        d3.min(vis.data.filter((d) => d[category] > 0), (d) => d[category]),
+        d3.max(vis.data, (d) => d[category])
+        // vis.ranges[category][0],
+        // vis.ranges[category][1]
+      ])
+      .range(vis.colorRanges[category]);
+
+    vis.legendQuantile.scale(vis.colorScale);
+
+    vis.legendGroup.call(vis.legendQuantile);
+    
+    let style = {
+      opacity: 0.5,
+      color: vis.colorRanges[category][vis.colorRanges[category].length-1]
     };
     const index = d.properties.NHD_NUM - 1;
-    if (d.properties.NHD_NUM < 80) {
+    if ((d.properties.NHD_NUM < 80) && (vis.data[index][category] > 0)) {
       const targetValue = vis.data[index][category];
-      style = {
-        color: colors[category],
-        fillOpacity: vis.opacityScale(targetValue),
-      };
+      style.fillColor = vis.colorScale(targetValue);
+      style.fillOpacity = 0.8;
     } else {
-      style = {
-        color: colors[category],
-        fillOpacity: 0,
-      };
+      style.fillOpacity = 0;
     }
     return style;
   };
 
   vis.neighborhoodLayer = L.geoJson(vis.geoFeatures, {
-    color: "#3F7484",
     weight: 2,
     style: vis.choroplethStyle,
     onEachFeature: vis.onEachNeighborhood,
@@ -136,7 +180,6 @@ CityMap.prototype.updateVis = function () {
   let vis = this;
   vis.map.removeLayer(vis.neighborhoodLayer);
   vis.neighborhoodLayer = L.geoJson(vis.geoFeatures, {
-    color: "#3F7484",
     weight: 2,
     style: vis.choroplethStyle,
     onEachFeature: vis.onEachNeighborhood,

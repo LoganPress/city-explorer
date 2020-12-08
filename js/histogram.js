@@ -15,7 +15,7 @@ Histogram.prototype.initVis = function() {
 
     vis.width = 700 - vis.margin.right - vis.margin.left;
     vis.height = 700 - vis.margin.top - vis.margin.bottom;
-    vis.padding = 20;
+    vis.padding = 30;
 
     vis.svg = d3.select("#" + vis.parentElement)
         .append("svg")
@@ -61,12 +61,19 @@ Histogram.prototype.initVis = function() {
         .style("padding", "10px")
 
     vis.ranges = {
-        "population": [0, 16000],
+        "population": [0, 20000],
         "walkscore": [0, 100],
         "transitscore": [0, 100],
         "bikescore": [0, 100],
-        "zhvi": [0, 450000]
+        "zhvi": [0, 500000]
     };
+
+    vis.title = vis.svg
+        .append("text")
+        .attr("x", vis.width/2 - 50)
+        .attr("y", 20)
+        .attr("class", "hist-title")
+        .style("font-size", 18);
 
     vis.updateVis();
 }
@@ -84,12 +91,9 @@ Histogram.prototype.updateVis = function(feature) {
     let vis = this;
 
     const category = $("#mapCategory").val();
-    console.log(category);
 
     vis.x
         .domain([vis.ranges[category][0], vis.ranges[category][1]]);
-    
-    console.log(d3.max(vis.data, (d) => d[category]));
 
     vis.histogram.value((d) => +d[category])
         .domain(vis.x.domain())
@@ -98,7 +102,7 @@ Histogram.prototype.updateVis = function(feature) {
     let displayData = vis.wrangleData(category)
 
     vis.bins = vis.histogram(displayData);
-    console.log(vis.bins);
+
     vis.xAxis.scale(vis.x);
 
     vis.y.domain([0, d3.max(vis.bins, (d) => d.length)]);
@@ -117,7 +121,7 @@ Histogram.prototype.updateVis = function(feature) {
         .duration(1500)
         .call(vis.yAxis);
 
-    let showTooltip = function(d) {
+    vis.showTooltip = function(d) {
         vis.tooltip
             .transition()
             .duration(100)
@@ -128,13 +132,13 @@ Histogram.prototype.updateVis = function(feature) {
             .style("top", (d3.mouse(this)[1]) + "px")
         }
     
-    let moveTooltip = function(d) {
+    vis.moveTooltip = function(d) {
         vis.tooltip
         .style("left", (d3.mouse(this)[0]+20) + "px")
         .style("top", (d3.mouse(this)[1]) + "px")
         }
     
-    let hideTooltip = function(d) {
+    vis.hideTooltip = function(d) {
         tooltip
             .transition()
             .duration(100)
@@ -151,10 +155,10 @@ Histogram.prototype.updateVis = function(feature) {
         .transition()
         .style("fill", function(){
             switch(category){
-                case "population": return "purple";
-                case "walkscore": return "#084d60";
-                case "transitscore": return "#00a5a5"; 
-                case "bikescore": return "#db9c48"; //#d37a06, #db902e, #c40801, #b0772c
+                case "population": return "#800080";
+                case "walkscore": return "#0b759d";
+                case "transitscore": return "#13d364"; 
+                case "bikescore": return "#ef941b"; //#d37a06, #db902e, #c40801, #b0772c
                 case "zhvi": return "#c40801";
             }
         })
@@ -181,4 +185,10 @@ Histogram.prototype.updateVis = function(feature) {
         .attr("height", 0)
         .transition()
         .remove();
+
+    const catString = $("#mapCategory option:selected").text();
+
+
+
+    vis.title.text("Distribution of " + catString);
 }

@@ -1,7 +1,7 @@
 body {
     text-align: center;
     background-color: antiquewhite;
-    font-family: "Gill Sans", "Gill Sans MT", "Calibri", sans-serif;
+    font-family: Georgia, serif;
     padding-left: 1em;
     padding-right: 1em;
 }
@@ -12,12 +12,24 @@ body {
 
 .vis-container {
     display: inline-block;
-    margin: 20px;
+    margin: 10px 20px 0px 20px;
+}
+
+#city-vis-legend {
+    position: relative;
+    height: 700px;
+    width: 10vw;
+}
+
+#legend-svg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #city-vis-container {
-    width: 40vw;
+    width: 30vw;
     height: 700px;
     border: 1px solid black;
 }
-
