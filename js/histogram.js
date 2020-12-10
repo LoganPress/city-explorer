@@ -176,8 +176,6 @@ Histogram.prototype.updateVis = function(feature) {
             }
         })
         .attr("x", (d) => vis.x(d.x0) + 1)
-        .attr("y", vis.y(0))
-        .attr("height", 0)
         .attr("width", function(d){
            let width = vis.x(d["x1"]) - vis.x(d["x0"]) - 1;
            if (width > 0) {
