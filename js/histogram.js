@@ -165,6 +165,7 @@ Histogram.prototype.updateVis = function(feature) {
         .append("rect")
         .merge(rects)
         .transition()
+        .duration(1000)
         .style("fill", function(){
             switch(category){
                 case "population": return "#800080";
@@ -174,7 +175,6 @@ Histogram.prototype.updateVis = function(feature) {
                 case "zhvi": return "#c40801";
             }
         })
-        .transition()
         .attr("x", (d) => vis.x(d.x0) + 1)
         .attr("y", vis.y(0))
         .attr("height", 0)
@@ -186,7 +186,6 @@ Histogram.prototype.updateVis = function(feature) {
                 return 0;
             }
         })
-        .transition()
         .attr("y", (d) => vis.y(d["length"]))
         .attr("height", (d) => vis.height - vis.y(d["length"]));
         
