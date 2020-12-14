@@ -24,10 +24,10 @@ CityMap.prototype.initVis = function () {
   let vis = this;
 
   vis.colorRanges = {
-    "population": ["#bd87bd", "#ad73ad", "#9d5f9c", "#8d4b8d", "#7d367d", "#6e216d", "#5e035e"],
+    "population": ["#e7b1e7", "#cf95cf", "#b87ab8", "#a15fa0", "#8b448a", "#742874", "#5e035e"],
     "walkscore": ["#d6f1fd", "#b3d2e0", "#92b4c5", "#7197aa", "#507a90", "#2f5f76", "#01455e"],
     "transitscore": ["#c3ebd3", "#a6d8b9", "#8ac59f", "#6eb286", "#539f6c", "#358d53", "#0b7a3a"],
-    "bikescore": ["#ffc577", "#f4b061", "#e99c4d", "#dd8739", "#d27127", "#c65b14", "#ba4400"],
+    "bikescore": ["#ffd29e", "#f4bc81", "#e9a566", "#dd8e4c", "#d27734", "#c65e1c", "#ba4400"],
     "zhvi": ["#c17775", "#c56965", "#c85b55", "#c94c43", "#c93c31", "#c7281c", "#c40801"]
   };
   vis.colorScales = {}
@@ -48,12 +48,14 @@ CityMap.prototype.initVis = function () {
   vis.legendGroup = vis.legendSvg.append("g");
 
   vis.ranges = {
-    "population": [0, 16000],
-    "walkscore": [10, 90],
+    "population": [1000, 16000],
+    "walkscore": [30, 90],
     "transitscore": [30, 70],
-    "bikescore": [5, 85],
+    "bikescore": [40, 85],
     "zhvi": [0, 450000]
   };
+
+  vis.selectedNeighborhoods = new Array(79).fill(false);
 
   vis.map = L.map(vis.parentElement).setView(vis.mapPosition, 12);
 
@@ -75,7 +77,9 @@ CityMap.prototype.initVis = function () {
             text +
             ": " +
             targetValue +
-            "</strong>",
+            "</strong><br/><strong id=\"" +
+            nid +
+            "-selected\">Click to compare me!</strong>",
           {
             sticky: true,
           }
@@ -94,6 +98,14 @@ CityMap.prototype.initVis = function () {
       }
       
       layer.on("click", function () {
+        vis.selectedNeighborhoods[index] = !vis.selectedNeighborhoods[index];
+        // if (vis.selectedNeighborhoods[index]) {
+        //   $("#" + nid + "-selected").text("Click to stop comparing me!");
+        // } else {
+        //   $("#" + nid + "-selected").text("Click to compare me!");
+        // }
+        // console.log($("#" + nid + "-selected").text());
+        vis.updateVis();
         neighborhoodVis.updateVis(vis.data[index]);
       });
     }
@@ -117,15 +129,24 @@ CityMap.prototype.initVis = function () {
     
     let style = {
       opacity: 0.5,
-      color: vis.colorRanges[category][vis.colorRanges[category].length-1]
+      color: vis.colorRanges[category][vis.colorRanges[category].length-1],
+      fillOpacity: 0
     };
     const index = d.properties.NHD_NUM - 1;
-    if ((d.properties.NHD_NUM < 80) && (vis.data[index][category] > 0)) {
-      const targetValue = vis.data[index][category];
-      style.fillColor = vis.colorScale(targetValue);
-      style.fillOpacity = 0.8;
-    } else {
-      style.fillOpacity = 0;
+    if (d.properties.NHD_NUM < 80) {
+      if (vis.selectedNeighborhoods[index]) {
+        style.fillColor = "#ffffff";
+        style.fillOpacity = 1;
+      } else {
+        if (vis.data[index][category] > 0) {
+          const targetValue = vis.data[index][category];
+          style.fillColor = vis.colorScale(targetValue);
+          style.fillOpacity = 0.8;
+        } else {
+          style.fillColor = "#686868";
+          style.fillOpacity = 0.8;
+        }
+      }
     }
     return style;
   };
@@ -187,4 +208,11 @@ CityMap.prototype.updateVis = function () {
     onEachFeature: vis.onEachNeighborhood,
   });
   vis.neighborhoodLayer.addTo(vis.map);
+  const category = $("#mapCategory").val();
+  let legCell = $(".cell").first().children('text').first()
+  let bound = legCell.text().split(" ")[2];
+  const categories = ["population", "walkscore", "bikescore", "transitscore"];
+  if(categories.includes(category)){
+    legCell.text("< " + bound);
+  }
 };

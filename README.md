@@ -15,6 +15,7 @@ Data collected from the following sources:
 External libraries used:
 - D3.js: https://d3js.org/
 - https://github.com/susielu/d3-legend
+- https://github.com/caged/d3-tip
 
 Other resources:
 - https://ogre.adc4gis.com/

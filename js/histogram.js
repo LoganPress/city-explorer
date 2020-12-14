@@ -72,7 +72,7 @@ Histogram.prototype.initVis = function() {
 
     vis.title = vis.svg
         .append("text")
-        .attr("x", vis.width/2 - 75)
+        .attr("x", vis.width/2 - 100)
         .attr("y", 20)
         .attr("class", "hist-title")
         .style("font-size", 18);
@@ -85,7 +85,7 @@ Histogram.prototype.initVis = function() {
 
     vis.ylabel = vis.svg
         .append("text")
-        .text("Count")
+        .text("Number of Neighborhoods")
         .attr("transform", "translate(10, 350)rotate(-90)")
         .style("font-size", 14);
 
@@ -144,17 +144,9 @@ Histogram.prototype.updateVis = function(feature) {
             .duration(100)
             .style("opacity", 1);
         vis.tooltip
-            .html("Range: " + d.x0 + " - " + d.x1 + " <br> " + "Count: " + d.length)
+            .html("Range: " + d.x0 + " - " + d.x1 + " <br> " + "Neighborhoods: " + d.length)
             .style("left", (x+50) + "px")
             .style("bottom", (y/2 + 100) + "px");
-        }
-    
-    vis.moveTooltip = function(e, d) {
-        let x = e.target.getAttribute("x");
-        let y = e.target.getAttribute("y");
-        vis.tooltip
-        .style("left", (x+20) + "px")
-        .style("top", y + "px");
         }
     
     vis.hideTooltip = function(d) {
@@ -192,12 +184,6 @@ Histogram.prototype.updateVis = function(feature) {
         })
         .attr("y", (d) => vis.y(d["length"]))
         .attr("height", (d) => vis.height - vis.y(d["length"]));
-        // .on("mouseover", function(d){
-        //     console.log("mouse over");
-        //     console.log(d);
-        // });
-        
-    // rects.transition().duration(1000);
 
     rects.exit()
         .transition()
@@ -208,15 +194,14 @@ Histogram.prototype.updateVis = function(feature) {
 
     rects = vis.svg.selectAll("rect").data(vis.bins)
         .on("mouseover", vis.showTooltip)
-        // .on("mousemove", vis.moveTooltip)
         .on("mouseleave", vis.hideTooltip);
 
     const catString = $("#mapCategory option:selected").text();
 
-    vis.title.text("Distribution of " + catString);
+    vis.title.text("Histogram Showing Distribution of " + catString);
     
     let xlabels = {
-        "population": "People",
+        "population": "Number of people",
         "walkscore": "Score out of 100",
         "transitscore": "Score out of 100",
         "bikescore": "Score out of 100",

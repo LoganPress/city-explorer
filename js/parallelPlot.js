@@ -27,6 +27,19 @@ ParallelPlot.prototype.initVis = function() {
 
     vis.data = vis.data.filter((d) => !parkIds.includes(d.nid));
 
+    vis.selectedNeighborhoods = new Array(79);
+    for (let i=0; i<vis.selectedNeighborhoods.length; i++) {
+        vis.selectedNeighborhoods[i] = {
+            selected: false,
+            color: [
+                Math.floor(Math.random() * 256),
+                Math.floor(Math.random() * 256),
+                Math.floor(Math.random() * 256)
+            ]
+        };
+    }
+    vis.numSelected = 0;
+
     vis.axes = [
         {
             id: "population",
@@ -117,25 +130,36 @@ ParallelPlot.prototype.wrangleData = function() {
     vis.updateVis({ nid: 0 })
 }
 
-ParallelPlot.prototype.updateVis = function(_neighborhood) {
+ParallelPlot.prototype.updateVis = function(neighborhood) {
     let vis = this;
 
-    vis.neighborhood = _neighborhood;
+    if (neighborhood.nid != 0) {
+        let newIndex = neighborhood.nid - 1;
+        if (vis.selectedNeighborhoods[newIndex].selected) {
+            vis.selectedNeighborhoods[newIndex].selected = false;
+            vis.numSelected--;
+        } else {
+            vis.selectedNeighborhoods[newIndex].selected = true;
+            vis.numSelected++;
+        }
 
-    if (vis.neighborhood.nid != 0) {
         vis.data.forEach((d) => {
-            if (vis.neighborhood.nid != d.nid) {
-                $("#parallel-path-" + d.nid).css({
-                    "stroke": "#24A0ED",
-                    "stroke-width": 1,
-                    "opacity": 0.2
-                });
+            let index = d.nid - 1;
+            if (vis.numSelected == 0) {
+                d3.select("#parallel-path-" + d.nid)
+                    .style("stroke", "#24A0ED")
+                    .style("stroke-width", 1)
+                    .style("opacity", 1);
+            } else if (!vis.selectedNeighborhoods[index].selected) {
+                d3.select("#parallel-path-" + d.nid)
+                    .style("stroke", "#24A0ED")
+                    .style("stroke-width", 1)
+                    .style("opacity", 0.2);
             } else {
-                $("#parallel-path-" + d.nid).css({
-                    "stroke": "red",
-                    "stroke-width": 2,
-                    "opacity": 1
-                });
+                d3.select("#parallel-path-" + d.nid)
+                    .style("stroke", "rgb(" + vis.selectedNeighborhoods[index].color.join(",") + ")")
+                    .style("stroke-width", 3)
+                    .style("opacity", 1);
             }
         });
     }
