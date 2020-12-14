@@ -85,7 +85,7 @@ Histogram.prototype.initVis = function() {
 
     vis.ylabel = vis.svg
         .append("text")
-        .text("Count")
+        .text("Number of Neighborhoods")
         .attr("transform", "translate(10, 350)rotate(-90)")
         .style("font-size", 14);
 
@@ -144,7 +144,7 @@ Histogram.prototype.updateVis = function(feature) {
             .duration(100)
             .style("opacity", 1);
         vis.tooltip
-            .html("Range: " + d.x0 + " - " + d.x1 + " <br> " + "Count: " + d.length)
+            .html("Range: " + d.x0 + " - " + d.x1 + " <br> " + "Neighborhoods: " + d.length)
             .style("left", (x+50) + "px")
             .style("bottom", (y/2 + 100) + "px");
         }

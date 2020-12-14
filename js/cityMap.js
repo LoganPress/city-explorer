@@ -133,14 +133,19 @@ CityMap.prototype.initVis = function () {
       fillOpacity: 0
     };
     const index = d.properties.NHD_NUM - 1;
-    if ((d.properties.NHD_NUM < 80) && (vis.data[index][category] > 0)) {
+    if (d.properties.NHD_NUM < 80) {
       if (vis.selectedNeighborhoods[index]) {
-        style.fillColor = "#e9e9e9";
+        style.fillColor = "#ffffff";
         style.fillOpacity = 1;
       } else {
-        const targetValue = vis.data[index][category];
-        style.fillColor = vis.colorScale(targetValue);
-        style.fillOpacity = 0.8;
+        if (vis.data[index][category] > 0) {
+          const targetValue = vis.data[index][category];
+          style.fillColor = vis.colorScale(targetValue);
+          style.fillOpacity = 0.8;
+        } else {
+          style.fillColor = "#686868";
+          style.fillOpacity = 0.8;
+        }
       }
     }
     return style;
