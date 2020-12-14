@@ -51,7 +51,7 @@ Histogram.prototype.initVis = function() {
         vis.updateVis();
     });
 
-    vis.tooltip = d3.select("#my_dataviz")
+    vis.tooltip = d3.select("#" + vis.parentElement)
         .append("div")
         .style("opacity", 0)
         .attr("class", "tooltip")
@@ -59,6 +59,8 @@ Histogram.prototype.initVis = function() {
         .style("color", "white")
         .style("border-radius", "5px")
         .style("padding", "10px")
+        .style("width", "200px")
+        .style("position", "relative");
 
     vis.ranges = {
         "population": [0, 16000],
@@ -70,7 +72,7 @@ Histogram.prototype.initVis = function() {
 
     vis.title = vis.svg
         .append("text")
-        .attr("x", vis.width/2 - 75)
+        .attr("x", vis.width/2 - 100)
         .attr("y", 20)
         .attr("class", "hist-title")
         .style("font-size", 18);
@@ -133,28 +135,25 @@ Histogram.prototype.updateVis = function(feature) {
         .duration(1500)
         .call(vis.yAxis);
 
-    vis.showTooltip = function(d) {
+    vis.showTooltip = function(e, d) {
+        let x = +e.target.getAttribute("x");
+        let y = +e.target.getAttribute("height");
         vis.tooltip
+            .style("z-index", "1")
             .transition()
             .duration(100)
-            .style("opacity", 1)
+            .style("opacity", 1);
         vis.tooltip
             .html("Range: " + d.x0 + " - " + d.x1 + " <br> " + "Count: " + d.length)
-            .style("left", (d3.mouse(this)[0]+20) + "px")
-            .style("top", (d3.mouse(this)[1]) + "px")
-        }
-    
-    vis.moveTooltip = function(d) {
-        vis.tooltip
-        .style("left", (d3.mouse(this)[0]+20) + "px")
-        .style("top", (d3.mouse(this)[1]) + "px")
+            .style("left", (x+50) + "px")
+            .style("bottom", (y/2 + 100) + "px");
         }
     
     vis.hideTooltip = function(d) {
-        tooltip
-            .transition()
-            .duration(100)
+        vis.tooltip
             .style("opacity", 0)
+            .style("z-index", "-1")
+            .style("left", "10000px");
         }
         
     
@@ -164,8 +163,7 @@ Histogram.prototype.updateVis = function(feature) {
         .enter()
         .append("rect")
         .merge(rects)
-        .transition()
-        .duration(1000)
+        .transition().duration(1000)
         .style("fill", function(){
             switch(category){
                 case "population": return "#800080";
@@ -186,7 +184,6 @@ Histogram.prototype.updateVis = function(feature) {
         })
         .attr("y", (d) => vis.y(d["length"]))
         .attr("height", (d) => vis.height - vis.y(d["length"]));
-        
 
     rects.exit()
         .transition()
@@ -195,12 +192,16 @@ Histogram.prototype.updateVis = function(feature) {
         .transition()
         .remove();
 
+    rects = vis.svg.selectAll("rect").data(vis.bins)
+        .on("mouseover", vis.showTooltip)
+        .on("mouseleave", vis.hideTooltip);
+
     const catString = $("#mapCategory option:selected").text();
 
-    vis.title.text("Distribution of " + catString);
+    vis.title.text("Histogram Showing Distribution of " + catString);
     
     let xlabels = {
-        "population": "People",
+        "population": "Number of people",
         "walkscore": "Score out of 100",
         "transitscore": "Score out of 100",
         "bikescore": "Score out of 100",
