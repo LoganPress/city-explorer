@@ -17,7 +17,7 @@ $.getJSON("data/Neighborhood_Boundaries.json", function (geoFeatures) {
         neighborhoodVis
       );
 
-      histogram = new Histogram("hist-container", nbhdStats.features);
+      // histogram = new Histogram("hist-container", nbhdStats.features);
     });
   });
 });

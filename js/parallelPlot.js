@@ -15,7 +15,7 @@ ParallelPlot.prototype.initVis = function() {
 
     vis.margin = { left: 0, top: 15, right: 0, bottom: 20 };
     vis.height = 400 + vis.margin.top + vis.margin.bottom;
-    vis.width = 1000 + vis.margin.left + vis.margin.right;
+    vis.width = 800 + vis.margin.left + vis.margin.right;
 
     vis.svg = d3.select("#" + vis.parentElement)
         .append("svg")
