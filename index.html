@@ -22,8 +22,11 @@
 		<div class="container">
             <!--Title-->
             <br>
-            <h1>Explore the city of St. Louis, MO</h1>
-            <br>
+            <b><h1>Explore the city of St. Louis, MO</h1></b>
+             
+            <p>
+
+            </p>
 
 			<!--Main Container-->
 			<div id="radio">
@@ -43,7 +46,8 @@
                         data-toggle="buttons"
                     >
                     <label class="btn btn-secondary active">
-							<input
+                            <input
+                                name="toolbar"
 								id="rb1"
 								type="radio"
 								name="options"
@@ -55,7 +59,8 @@
                         </label>
                         
 						<label class="btn btn-secondary">
-							<input
+                            <input
+                                name="toolbar"
 								id="rb2"
 								type="radio"
 								name="options"
@@ -65,7 +70,8 @@
 							Walk Score
 						</label>
 						<label class="btn btn-secondary">
-							<input
+                            <input
+                                name="toolbar"
 								id="rb3"
 								type="radio"
 								name="options"
@@ -75,7 +81,8 @@
 							Transit Score
 						</label>
 						<label class="btn btn-secondary">
-							<input
+                            <input
+                                name="toolbar"
 								id="rb4"
 								type="radio"
 								name="options"
@@ -85,7 +92,8 @@
 							Bike Score
 						</label>
 						<label class="btn btn-secondary">
-							<input
+                            <input
+                                name="toolbar"
 								id="rb5"
 								type="radio"
 								name="options"
@@ -117,20 +125,15 @@
 						<div class="col-md-3">
 							<div
 								class="vis-container"
-								id="parallel-plot-container"
-							></div>
+                                id="parallel-plot-container"
+                            >
+                            <a href="/EvaluationCzar/ProcessBook.html">
+                                <button type="submit" id="processButton" class="processButton btn btn-secondary" onclick="btnClicked()">Process Book</button> 
+                            </a>
+                            </div>
 						</div>
                     </div>
                 </div>
-				</div>
-				
-                <a
-				id="processButton"
-				class="btn btn-primary"
-				href="EvaluationCzar/ProcessBook.html"
-				role="button"
-				>Process Book</a
-			>
 			</div>
 		</div>
 

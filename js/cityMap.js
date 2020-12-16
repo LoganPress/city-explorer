@@ -66,7 +66,7 @@ CityMap.prototype.initVis = function () {
         category = selected.val();
     }
 
-    const text = $("#mapCategory option:selected").text();
+    const text = $("#mapCategory input[type='radio']:checked").text();
     const parkIds = [80, 81, 82, 83, 84, 85, 86, 87, 88];
     const nid = n.properties.NHD_NUM;
     const index = nid - 1;
@@ -76,13 +76,11 @@ CityMap.prototype.initVis = function () {
         // Following regex from https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
         targetValue = targetValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         layer.bindTooltip(
-          "<h2>" +
+          "<h4>" +
             vis.data[index].name +
-            "</h2><strong>" +
-            text +
-            ": " +
+            "</h4><h5>" +
             targetValue +
-            "</strong><br/><strong id=\"" +
+            "</h5><strong id=\"" +
             nid +
             "-selected\">Click to compare me!</strong>",
           {
@@ -91,11 +89,11 @@ CityMap.prototype.initVis = function () {
         );
       } else{
         layer.bindTooltip(
-          "<h2>" +
+          "<h4>" +
             vis.data[index].name +
-            "</h2><strong>" +
+            "</h4><h5>" +
             text +
-            ": Data unavailable </strong>",
+            "Data unavailable </h5>",
           {
             sticky: true,
           }
@@ -124,7 +122,6 @@ CityMap.prototype.initVis = function () {
         category = selected.val();
     }
 
-    
     vis.colorScale
       .domain([
         // d3.min(vis.data.filter((d) => d[category] > 0), (d) => d[category]),
@@ -189,7 +186,7 @@ CityMap.prototype.initVis = function () {
     }
   ).addTo(vis.map);
 
-  $("#mapCategory").change(function () {
+  $('input:radio[name=toolbar]:checked').change(function () {
     vis.updateVis();
   });
 
@@ -219,7 +216,13 @@ CityMap.prototype.updateVis = function () {
     onEachFeature: vis.onEachNeighborhood,
   });
   vis.neighborhoodLayer.addTo(vis.map);
-  const category = $("#mapCategory").val();
+
+  const category = "";
+  const selected = $("#mapCategory input[type='radio']:checked");
+  if (selected.length > 0) {
+    category = selected.val();
+  }
+
   let legCell = $(".cell").first().children('text').first()
   let bound = legCell.text().split(" ")[2];
   const categories = ["population", "walkscore", "bikescore", "transitscore"];
