@@ -1,51 +1,167 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>City Living | CSE457A</title>
-    <link rel="stylesheet" href="css/leaflet.css" />
-    <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-    <div class="container">
-        <h1>City Explorer</h1>
-        <a href="EvaluationCzar/ProcessBook.html">Process Book</a>
-        <br/><br/><br/>
-        <label for="mapCategory">Category to show on map:&nbsp;</label>
-        <select id="mapCategory">
-            <option value="population" selected>Population</option>
-            <option value="walkscore">Walk score</option>
-            <option value="transitscore">Transit score</option>
-            <option value="bikescore">Bike score</option>
-            <option value="zhvi">Home value estimate</option>
-        </select>
-        <br/><br/>
-        <div id="top-row-container">
-            <div class="vis-container" id="city-vis-legend"></div>
-            <div class="vis-container" id="city-vis-container"></div>
-            <div class="vis-container" id="parallel-plot-container"></div>
-            <!-- <div class="vis-container" id="hist-container"></div> -->
-        </div>
-        <!-- <div id="neighborhood-vis-container">
-            <h2 id="neighborhood-title"></h2>
-            
-        </div> -->
-    </div>
-    
-    <script src="js/jquery.min.js"></script>
-    <script src="js/leaflet.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/leaflet.js"></script>
-    <script src="https://d3js.org/d3.v6.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
-    <script src="js/d3-tip.js"></script>
-    <script src="js/topojson.min.js"></script>
-    <script src="js/parallelPlot.js"></script>
-    <script src="js/histogram.js"></script>
-    <script src="js/neighborhoodVis.js"></script>
-    <script src="js/cityMap.js"></script>
-    <script src="js/main.js"></script>
-</body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1"
+		/>
+		<title>City Living | CSE457A</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="css/leaflet.css" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+
+	<body>
+		<div class="container">
+            <!--Title-->
+            <br>
+            <h1>Explore the city of St. Louis, MO</h1>
+            <br>
+
+			<!--Main Container-->
+			<div id="radio">
+
+				<div
+					id="mapCategory"
+					class="btn-group btn-group-toggle row"
+					data-toggle="buttons"
+                >
+                
+					<!--Radio Button Form-->
+					<form id="categorySelector">
+						
+                    <div
+                        id="mapCategory"
+                        class="btn-group btn-group-toggle row"
+                        data-toggle="buttons"
+                    >
+                    <label class="btn btn-secondary active">
+							<input
+								id="rb1"
+								type="radio"
+								name="options"
+								value="population"
+								autocomplete="off"
+								checked
+							/>
+							Population
+                        </label>
+                        
+						<label class="btn btn-secondary">
+							<input
+								id="rb2"
+								type="radio"
+								name="options"
+								value="walkscore"
+								autocomplete="off"
+							/>
+							Walk Score
+						</label>
+						<label class="btn btn-secondary">
+							<input
+								id="rb3"
+								type="radio"
+								name="options"
+								value="transitscore"
+								autocomplete="off"
+							/>
+							Transit Score
+						</label>
+						<label class="btn btn-secondary">
+							<input
+								id="rb4"
+								type="radio"
+								name="options"
+								value="bikescore"
+								autocomplete="off"
+							/>
+							Bike Score
+						</label>
+						<label class="btn btn-secondary">
+							<input
+								id="rb5"
+								type="radio"
+								name="options"
+								value="zhvi"
+								autocomplete="off"
+							/>
+							Home Value Index
+						</label>
+                    </form>
+
+                <div id="visualizations">
+                    <!--Visualizations Start Here-->
+					<div class="row">
+                        <!--Legend-->
+						<div class="col-md-3">
+							<div
+								class="vis-container"
+								id="city-vis-legend"
+							></div>
+						</div>
+                        <!--City Map-->
+						<div class="col-md-4">
+							<div
+								class="vis-container"
+								id="city-vis-container"
+							></div>
+                        </div>
+                        <!--Parallel Plot-->
+						<div class="col-md-3">
+							<div
+								class="vis-container"
+								id="parallel-plot-container"
+							></div>
+						</div>
+                    </div>
+                </div>
+				</div>
+				
+                <a
+				id="processButton"
+				class="btn btn-primary"
+				href="EvaluationCzar/ProcessBook.html"
+				role="button"
+				>Process Book</a
+			>
+			</div>
+		</div>
+
+		<!--Scripts-->
+		<!--Bootstrap-->
+		<script src="js/jquery.min.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"
+		></script>
+
+		<!--External Libraries-->
+		<script src="js/leaflet.js"></script>
+		<script src="https://d3js.org/d3.v6.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+		<script src="js/d3-tip.js"></script>
+		<script src="js/topojson.min.js"></script>
+
+		<!--Industry Standards Scripts-->
+		<script src="js/parallelPlot.js"></script>
+		<script src="js/histogram.js"></script>
+		<script src="js/neighborhoodVis.js"></script>
+		<script src="js/cityMap.js"></script>
+
+		<!--Run-->
+		<script src="js/main.js"></script>
+	</body>
 </html>
