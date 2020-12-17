@@ -65,8 +65,9 @@ CityMap.prototype.initVis = function () {
     if (selected.length > 0) {
         category = selected.val();
     }
+    console.log(category);
 
-    const text = $("#mapCategory input[type='radio']:checked").text();
+    const text = $("#mapCategory input[type='radio']:checked").attr("text");
     const parkIds = [80, 81, 82, 83, 84, 85, 86, 87, 88];
     const nid = n.properties.NHD_NUM;
     const index = nid - 1;
@@ -91,9 +92,9 @@ CityMap.prototype.initVis = function () {
         layer.bindTooltip(
           "<h4>" +
             vis.data[index].name +
-            "</h4><h5>" +
+            "</h4><strong>" +
             text +
-            "Data unavailable </h5>",
+            " unavailable </strong>",
           {
             sticky: true,
           }
@@ -186,7 +187,7 @@ CityMap.prototype.initVis = function () {
     }
   ).addTo(vis.map);
 
-  $('input:radio[name=toolbar]:checked').change(function () {
+  $('label').click(function () {
     vis.updateVis();
   });
 
@@ -217,7 +218,7 @@ CityMap.prototype.updateVis = function () {
   });
   vis.neighborhoodLayer.addTo(vis.map);
 
-  const category = "";
+  let category = "";
   const selected = $("#mapCategory input[type='radio']:checked");
   if (selected.length > 0) {
     category = selected.val();
