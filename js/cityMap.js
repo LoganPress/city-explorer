@@ -23,6 +23,8 @@ CityMap = function (
 CityMap.prototype.initVis = function () {
   let vis = this;
 
+  vis.category = "population";
+
   vis.colorRanges = {
     "population": ["#e1b7fd", "#c370fc", "#a628fa", "#8d05e8", "#6e04b5", "#55038c", "#3c0263"],
     "walkscore": ["#d5ebff", "#8cc9ff", "#42a7ff", "#0079e3", "#0062b9", "#004c8f", "#003665"],
@@ -59,19 +61,11 @@ CityMap.prototype.initVis = function () {
   vis.map = L.map(vis.parentElement).setView(vis.mapPosition, 12);
 
   vis.onEachNeighborhood = function (n, layer) {
-   
-    var category = "";
-    var selected = $("#mapCategory input[type='radio']:checked");
-    if (selected.length > 0) {
-        category = selected.val();
-    }
-    console.log(category);
-
     const text = $("#mapCategory input[type='radio']:checked").attr("text");
     const parkIds = [80, 81, 82, 83, 84, 85, 86, 87, 88];
     const nid = n.properties.NHD_NUM;
     const index = nid - 1;
-    let targetValue = vis.data[index][category];
+    let targetValue = vis.data[index][vis.category];
     if (!parkIds.includes(nid)) {
       if (targetValue > 0){
         // Following regex from https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
@@ -117,20 +111,14 @@ CityMap.prototype.initVis = function () {
 
   vis.choroplethStyle = function (d) {
 
-    var category = "";
-    var selected = $("#mapCategory input[type='radio']:checked");
-    if (selected.length > 0) {
-        category = selected.val();
-    }
-
     vis.colorScale
       .domain([
-        // d3.min(vis.data.filter((d) => d[category] > 0), (d) => d[category]),
-        // d3.max(vis.data, (d) => d[category])
-        vis.ranges[category][0],
-        vis.ranges[category][1]
+        // d3.min(vis.data.filter((d) => d[vis.category] > 0), (d) => d[vis.category]),
+        // d3.max(vis.data, (d) => d[vis.category])
+        vis.ranges[vis.category][0],
+        vis.ranges[vis.category][1]
       ])
-      .range(vis.colorRanges[category]);
+      .range(vis.colorRanges[vis.category]);
 
     vis.legendQuantile.scale(vis.colorScale);
 
@@ -138,7 +126,7 @@ CityMap.prototype.initVis = function () {
     
     let style = {
       opacity: 0.5,
-      color: vis.colorRanges[category][vis.colorRanges[category].length-1],
+      color: vis.colorRanges[vis.category][vis.colorRanges[vis.category].length-1],
       fillOpacity: 0
     };
     const index = d.properties.NHD_NUM - 1;
@@ -147,8 +135,8 @@ CityMap.prototype.initVis = function () {
         style.fillColor = "#ffffff";
         style.fillOpacity = 1;
       } else {
-        if (vis.data[index][category] > 0) {
-          const targetValue = vis.data[index][category];
+        if (vis.data[index][vis.category] > 0) {
+          const targetValue = vis.data[index][vis.category];
           style.fillColor = vis.colorScale(targetValue);
           style.fillOpacity = 0.8;
         } else {
@@ -187,7 +175,8 @@ CityMap.prototype.initVis = function () {
     }
   ).addTo(vis.map);
 
-  $('label').click(function () {
+  $('label').click(function(e) {
+    vis.category = e.target.childNodes[1].defaultValue;
     vis.updateVis();
   });
 
@@ -210,6 +199,7 @@ CityMap.prototype.wrangleData = function () {
 
 CityMap.prototype.updateVis = function () {
   let vis = this;
+
   vis.map.removeLayer(vis.neighborhoodLayer);
   vis.neighborhoodLayer = L.geoJson(vis.geoFeatures, {
     weight: 2,
@@ -218,16 +208,10 @@ CityMap.prototype.updateVis = function () {
   });
   vis.neighborhoodLayer.addTo(vis.map);
 
-  let category = "";
-  const selected = $("#mapCategory input[type='radio']:checked");
-  if (selected.length > 0) {
-    category = selected.val();
-  }
-
   let legCell = $(".cell").first().children('text').first()
   let bound = legCell.text().split(" ")[2];
   const categories = ["population", "walkscore", "bikescore", "transitscore"];
-  if(categories.includes(category)){
+  if(categories.includes(vis.category)){
     legCell.text("< " + bound);
   }
 };

@@ -38,7 +38,7 @@ body {
     padding-top: 450px;
     position: relative;
     height: 700px;
-    width: 40vw
+    width: 50vw
 }
 
 #parallel-plot {
@@ -47,9 +47,9 @@ body {
     left: 0;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 95vw) {
     .container{
-        max-width: 1200px;
+        max-width: 95vw;
     }
 }
 

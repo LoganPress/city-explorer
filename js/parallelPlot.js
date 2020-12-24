@@ -13,9 +13,14 @@ ParallelPlot = function(_parentElement, _data, _neighborhood) {
 ParallelPlot.prototype.initVis = function() {
     let vis = this;
 
+    /* 
+        Thanks to rink.attendant.6 at 
+        https://stackoverflow.com/questions/18387490/how-do-i-convert-a-height-of-an-element-given-in-vh-to-pixels
+        for viewer height/width to pixel conversions
+    */
     vis.margin = { left: 0, top: 15, right: 0, bottom: 20 };
     vis.height = 400 + vis.margin.top + vis.margin.bottom;
-    vis.width = 800 + vis.margin.left + vis.margin.right;
+    vis.width = $(window).width() * 0.5 + vis.margin.left + vis.margin.right;
 
     vis.svg = d3.select("#" + vis.parentElement)
         .append("svg")
