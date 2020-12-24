@@ -24,11 +24,11 @@ CityMap.prototype.initVis = function () {
   let vis = this;
 
   vis.colorRanges = {
-    "population": ["#e7b1e7", "#cf95cf", "#b87ab8", "#a15fa0", "#8b448a", "#742874", "#5e035e"],
-    "walkscore": ["#d6f1fd", "#b3d2e0", "#92b4c5", "#7197aa", "#507a90", "#2f5f76", "#01455e"],
-    "transitscore": ["#c3ebd3", "#a6d8b9", "#8ac59f", "#6eb286", "#539f6c", "#358d53", "#0b7a3a"],
-    "bikescore": ["#ffd29e", "#f4bc81", "#e9a566", "#dd8e4c", "#d27734", "#c65e1c", "#ba4400"],
-    "zhvi": ["#c17775", "#c56965", "#c85b55", "#c94c43", "#c93c31", "#c7281c", "#c40801"]
+    "population": ["#e1b7fd", "#c370fc", "#a628fa", "#8d05e8", "#6e04b5", "#55038c", "#3c0263"],
+    "walkscore": ["#d5ebff", "#8cc9ff", "#42a7ff", "#0079e3", "#0062b9", "#004c8f", "#003665"],
+    "transitscore": ["#eafff1", "#b5ffcf", "#6bff9e", "#0cff60", "#00cb46", "#009634", "#006222"],
+    "bikescore": ["#ffe8cf", "#ffd5a9", "#ffbe79", "#ffa240", "#e97800", "#c36400", "#8a4700"],
+    "zhvi": ["#ffd9e1", "#ffa0b4", "#ff708f", "#ff3662", "#fc0037", "#d6002f", "#8a001e"]
   };
   vis.colorScales = {}
   vis.colorScale = d3.scaleQuantile();
@@ -36,7 +36,6 @@ CityMap.prototype.initVis = function () {
   vis.legendSvg = d3.select("#city-vis-legend")
     .append("svg")
     .attr("height", 505)
-    .attr("width", "10vw")
     .attr("id", "legend-svg");
 
   vis.legendQuantile = d3.legendColor()
@@ -60,8 +59,15 @@ CityMap.prototype.initVis = function () {
   vis.map = L.map(vis.parentElement).setView(vis.mapPosition, 12);
 
   vis.onEachNeighborhood = function (n, layer) {
-    const category = $("#mapCategory").val();
-    const text = $("#mapCategory option:selected").text();
+   
+    var category = "";
+    var selected = $("#mapCategory input[type='radio']:checked");
+    if (selected.length > 0) {
+        category = selected.val();
+    }
+    console.log(category);
+
+    const text = $("#mapCategory input[type='radio']:checked").attr("text");
     const parkIds = [80, 81, 82, 83, 84, 85, 86, 87, 88];
     const nid = n.properties.NHD_NUM;
     const index = nid - 1;
@@ -71,13 +77,11 @@ CityMap.prototype.initVis = function () {
         // Following regex from https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
         targetValue = targetValue.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         layer.bindTooltip(
-          "<h2>" +
+          "<h4>" +
             vis.data[index].name +
-            "</h2><strong>" +
-            text +
-            ": " +
+            "</h4><h5>" +
             targetValue +
-            "</strong><br/><strong id=\"" +
+            "</h5><strong id=\"" +
             nid +
             "-selected\">Click to compare me!</strong>",
           {
@@ -86,11 +90,11 @@ CityMap.prototype.initVis = function () {
         );
       } else{
         layer.bindTooltip(
-          "<h2>" +
+          "<h4>" +
             vis.data[index].name +
-            "</h2><strong>" +
+            "</h4><strong>" +
             text +
-            ": Data unavailable </strong>",
+            " unavailable </strong>",
           {
             sticky: true,
           }
@@ -112,7 +116,12 @@ CityMap.prototype.initVis = function () {
   };
 
   vis.choroplethStyle = function (d) {
-    const category = $("#mapCategory").val();
+
+    var category = "";
+    var selected = $("#mapCategory input[type='radio']:checked");
+    if (selected.length > 0) {
+        category = selected.val();
+    }
 
     vis.colorScale
       .domain([
@@ -178,7 +187,7 @@ CityMap.prototype.initVis = function () {
     }
   ).addTo(vis.map);
 
-  $("#mapCategory").change(function () {
+  $('label').click(function () {
     vis.updateVis();
   });
 
@@ -208,7 +217,13 @@ CityMap.prototype.updateVis = function () {
     onEachFeature: vis.onEachNeighborhood,
   });
   vis.neighborhoodLayer.addTo(vis.map);
-  const category = $("#mapCategory").val();
+
+  let category = "";
+  const selected = $("#mapCategory input[type='radio']:checked");
+  if (selected.length > 0) {
+    category = selected.val();
+  }
+
   let legCell = $(".cell").first().children('text').first()
   let bound = legCell.text().split(" ")[2];
   const categories = ["population", "walkscore", "bikescore", "transitscore"];

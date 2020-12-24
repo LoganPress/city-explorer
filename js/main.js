@@ -2,6 +2,10 @@ let cityVis;
 let neighborhoodVis;
 let histogram;
 
+function btnClicked(){
+  location.href = "/EvaluationCzar/ProcessBook.html"
+}
+
 $.getJSON("data/Neighborhood_Boundaries.json", function (geoFeatures) {
   const mapPosition = [38.636118, -90.250592];
   $.getJSON("data/transit/metro.json", function (geoFeaturesMetro) {
@@ -16,7 +20,8 @@ $.getJSON("data/Neighborhood_Boundaries.json", function (geoFeatures) {
         geoFeaturesMetro.features,
         neighborhoodVis
       );
-
+      
+      // Rest In Peace
       // histogram = new Histogram("hist-container", nbhdStats.features);
     });
   });
