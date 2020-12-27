@@ -163,7 +163,7 @@ ParallelPlot.prototype.updateVis = function(neighborhood) {
             } else {
                 d3.select("#parallel-path-" + d.nid)
                     .style("stroke", "rgb(" + vis.selectedNeighborhoods[index].color.join(",") + ")")
-                    .style("stroke-width", 3)
+                    .style("stroke-width", 4)
                     .style("opacity", 1);
             }
         });

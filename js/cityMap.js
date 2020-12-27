@@ -56,12 +56,20 @@ CityMap.prototype.initVis = function () {
     "zhvi": [0, 450000]
   };
 
+  vis.displayNames = {
+    "population": "Population",
+    "walkscore": "Walk Score",
+    "transitscore": "Transit Score",
+    "bikescore": "Bike Score",
+    "zhvi": "Home Value Estimate"
+  }
+
   vis.selectedNeighborhoods = new Array(79).fill(false);
 
   vis.map = L.map(vis.parentElement).setView(vis.mapPosition, 12);
 
   vis.onEachNeighborhood = function (n, layer) {
-    const text = $("#mapCategory input[type='radio']:checked").attr("text");
+    const text = vis.displayNames[vis.category];
     const parkIds = [80, 81, 82, 83, 84, 85, 86, 87, 88];
     const nid = n.properties.NHD_NUM;
     const index = nid - 1;
