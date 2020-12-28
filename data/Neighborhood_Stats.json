@@ -7,7 +7,16 @@
             "walkscore": 58,
             "bikescore": 63,
             "transitscore": 42,
-            "zhvi":105253
+            "zhvi":105253,
+            "income":35271,
+            "demo": {
+                "white": 0.445,
+                "hispanic": 0.077,
+                "black": 0.393,
+                "asian": 0.0164,
+                "mixed": 0.0368,
+                "other": 0.0324
+            }
         },
         {
             "nid": 2,
@@ -16,7 +25,16 @@
             "walkscore": 74,
             "transitscore": 42,
             "bikescore": 71,
-            "zhvi":67138
+            "zhvi":67138,
+            "income": 31987,
+            "demo": {
+                "white": 0.594,
+                "hispanic": 0.0869,
+                "black": 0.293,
+                "asian": 0.0047,
+                "mixed": 0.018,
+                "other": 0.0039
+            }
         },
         {
             "nid": 3,
@@ -25,7 +43,16 @@
             "walkscore": 59,
             "transitscore": 39,
             "bikescore": 65,
-            "zhvi": 183384
+            "zhvi": 183384,
+            "income": 48409,
+            "demo": {
+                "white": 0.788,
+                "hispanic": 0.042,
+                "black": 0.132,
+                "asian": 0.007,
+                "mixed": 0.0281,
+                "other": 0.0025
+            }
         },
         {
             "nid": 4,
@@ -34,7 +61,16 @@
             "walkscore": 42,
             "transitscore": 39,
             "bikescore": 67,
-            "zhvi":143003
+            "zhvi":143003,
+            "income":48880,
+            "demo": {
+                "white": 0.769,
+                "hispanic": 0.0424,
+                "black": 0.108,
+                "asian": 0.0278,
+                "mixed": 0.029,
+                "other": 0.0232
+            }
         },
         {
             "nid": 5,
@@ -43,7 +79,16 @@
             "walkscore": 67,
             "transitscore": 39,
             "bikescore": 65,
-            "zhvi":118570
+            "zhvi":118570,
+            "income":37247,
+            "demo": {
+                "white": 0.678,
+                "hispanic": 0.0869,
+                "black": 0.151,
+                "asian": 0.0401,
+                "mixed": 0.0286,
+                "other": 0.0154
+            }
         }, 
         {
             "nid": 6,
@@ -52,7 +97,16 @@
             "walkscore": 63,
             "transitscore": 40,
             "bikescore": 60,
-            "zhvi":173940
+            "zhvi":173940,
+            "income":57111,
+            "demo": {
+                "white": 0.892,
+                "hispanic": 0.0478,
+                "black": 0.046,
+                "asian": 0.0075,
+                "mixed": 0.0062,
+                "other": 0
+            }
         },   
         {
             "nid": 7,
@@ -61,7 +115,16 @@
             "walkscore": 70,
             "transitscore": 40,
             "bikescore": 56,
-            "zhvi":211052
+            "zhvi":211052,
+            "income":59679,
+            "demo": {
+                "white": 0.806,
+                "hispanic": 0.0396,
+                "black": 0.106,
+                "asian": 0.0203,
+                "mixed": 0.0257,
+                "other": 0.0029
+            }
         },
         {
             "nid": 8,
@@ -70,7 +133,16 @@
             "walkscore": 62,
             "transitscore": 39,
             "bikescore": 60,
-            "zhvi":317814
+            "zhvi":317814,
+            "income":64276,
+            "demo": {
+                "white": 0.909,
+                "hispanic": 0.0198,
+                "black": 0.0444,
+                "asian": 0.0074,
+                "mixed": 0.0137,
+                "other": 0.0053
+            }
         }, 
         {
             "nid": 9,
@@ -79,7 +151,16 @@
             "walkscore": 59,
             "transitscore": 43,
             "bikescore": 58,
-            "zhvi":192436
+            "zhvi":192436,
+            "income":58345,
+            "demo": {
+                "white": 0.858,
+                "hispanic": 0.0271,
+                "black": 0.0786,
+                "asian": 0.0196,
+                "mixed": 0.015,
+                "other": 0.0022
+            }
         },
         {
             "nid": 10,
@@ -88,7 +169,16 @@
             "walkscore": 55,
             "transitscore": 34,
             "bikescore": 63,
-            "zhvi":148890
+            "zhvi":148890,
+            "income":51493,
+            "demo": {
+                "white": 0.826,
+                "hispanic": 0.057,
+                "black": 0.0307,
+                "asian": 0.0207,
+                "mixed": 0.0401,
+                "other": 0.025
+            }
         }, 
         {
             "nid": 11,
@@ -97,7 +187,16 @@
             "walkscore": 51,
             "transitscore": 37,
             "bikescore": 47,
-            "zhvi":167166
+            "zhvi":167166,
+            "income":53551,
+            "demo": {
+                "white": 0.881,
+                "hispanic": 0.0379,
+                "black": 0.0285,
+                "asian": 0.0102,
+                "mixed": 0.0246,
+                "other": 0.0175
+            }
         },
         {
             "nid": 12,
@@ -106,7 +205,16 @@
             "walkscore": 77,
             "transitscore": 39,
             "bikescore": 59,
-            "zhvi":182963
+            "zhvi":182963,
+            "income":42477,
+            "demo": {
+                "white": 0.955,
+                "hispanic": 0.018,
+                "black": 0.0139,
+                "asian": 0.0029,
+                "mixed": 0.0096,
+                "other": 0.0005
+            }
         }, 
         {
             "nid": 13,
@@ -115,7 +223,16 @@
             "walkscore": 69,
             "transitscore": 39,
             "bikescore": 59,
-            "zhvi":188699
+            "zhvi":188699,
+            "income":41776,
+            "demo": {
+                "white": 0.746,
+                "hispanic": 0.0164,
+                "black": 0.179,
+                "asian": 0.0185,
+                "mixed": 0.0326,
+                "other": 0.0075
+            }
         },
         {
             "nid": 14,
@@ -124,7 +241,16 @@
             "walkscore": 61,
             "transitscore": 40,
             "bikescore": 54,
-            "zhvi":195481
+            "zhvi":195481,
+            "income":50399,
+            "demo": {
+                "white": 0.783,
+                "hispanic": 0.0199,
+                "black": 0.139,
+                "asian": 0.0151,
+                "mixed": 0.0416,
+                "other": 0.0019
+            }
         },
         {
             "nid": 15,
@@ -133,7 +259,16 @@
             "walkscore": 74,
             "transitscore": 44,
             "bikescore": 63,
-            "zhvi":189888
+            "zhvi":189888,
+            "income":45714,
+            "demo": {
+                "white": 0.544,
+                "hispanic": 0.0691,
+                "black": 0.254,
+                "asian": 0.0907,
+                "mixed": 0.0305,
+                "other": 0.011
+            }
         },
         {
             "nid": 16,
@@ -142,7 +277,16 @@
             "walkscore": 72,
             "transitscore": 44,
             "bikescore": 61,
-            "zhvi":87413
+            "zhvi":87413,
+            "income":26407,
+            "demo": {
+                "white": 0.263,
+                "hispanic": 0.115,
+                "black": 0.512,
+                "asian": 0.0817,
+                "mixed": 0.0227,
+                "other": 0.0059
+            }
         },
         {
             "nid": 17,
@@ -151,7 +295,16 @@
             "walkscore": 60,
             "transitscore": 39,
             "bikescore": 60,
-            "zhvi":78333
+            "zhvi":78333,
+            "income":19919,
+            "demo": {
+                "white": 0.438,
+                "hispanic": 0.0721,
+                "black": 0.435,
+                "asian": 0.0088,
+                "mixed": 0.0376,
+                "other": 0.008
+            }
         },
         {
             "nid": 18,
@@ -160,7 +313,16 @@
             "walkscore": 71,
             "transitscore": 39,
             "bikescore": 64,
-            "zhvi":70100
+            "zhvi":70100,
+            "income":20717,
+            "demo": {
+                "white": 0.377,
+                "hispanic": 0.0258,
+                "black": 0.554,
+                "asian": 0.0027,
+                "mixed": 0.041,
+                "other": 0
+            }
         },
         {
             "nid": 19,
@@ -169,7 +331,16 @@
             "walkscore": 82,
             "transitscore": 45,
             "bikescore": 65,
-            "zhvi":102700
+            "zhvi":102700,
+            "income":27863,
+            "demo": {
+                "white": 0.233,
+                "hispanic": 0.0904,
+                "black": 0.62,
+                "asian": 0.0226,
+                "mixed": 0.0248,
+                "other": 0.0087
+            }
         },
         {
             "nid": 20,
@@ -178,7 +349,16 @@
             "walkscore": 38,
             "transitscore": 0,
             "bikescore": 40,
-            "zhvi":0
+            "zhvi":0,
+            "income":57984,
+            "demo": {
+                "white": 0.713,
+                "hispanic": 0,
+                "black": 0.223,
+                "asian": 0.0339,
+                "mixed": 0.0056,
+                "other": 0.0245
+            }
         },
         {
             "nid": 21,
@@ -187,7 +367,16 @@
             "walkscore": 83,
             "transitscore": 43,
             "bikescore": 63,
-            "zhvi":272234
+            "zhvi":272234,
+            "income":55449,
+            "demo": {
+                "white": 0.767,
+                "hispanic": 0.0126,
+                "black": 0.188,
+                "asian": 0.0126,
+                "mixed": 0.0119,
+                "other": 0.0085
+            }
             
         },
         {
@@ -197,7 +386,16 @@
             "walkscore": 78,
             "transitscore": 44,
             "bikescore": 64,
-            "zhvi":233694
+            "zhvi":233694,
+            "income":52256,
+            "demo": {
+                "white": 0.702,
+                "hispanic": 0.0222,
+                "black": 0.251,
+                "asian": 0.0015,
+                "mixed": 0.0201,
+                "other": 0.0029
+            }
         },
         {
             "nid": 23,
@@ -206,7 +404,16 @@
             "walkscore": 75,
             "transitscore": 44,
             "bikescore": 69,
-            "zhvi":226473
+            "zhvi":226473,
+            "income":53692,
+            "demo": {
+                "white": 0.624,
+                "hispanic": 0.0118,
+                "black": 0.344,
+                "asian": 0.0108,
+                "mixed": 0.0045,
+                "other": 0.0043
+            }
         },
         {
             "nid": 24,
@@ -215,7 +422,16 @@
             "walkscore": 79,
             "transitscore": 43,
             "bikescore": 64,
-            "zhvi":219278
+            "zhvi":219278,
+            "income":51527,
+            "demo": {
+                "white": 0.326,
+                "hispanic": 0.0386,
+                "black": 0.628,
+                "asian": 0.0052,
+                "mixed": 0.0023,
+                "other": 0
+            }
         },
         {
             "nid": 25,
@@ -224,7 +440,16 @@
             "walkscore": 82,
             "transitscore": 46,
             "bikescore": 69,
-            "zhvi":240069
+            "zhvi":240069,
+            "income":44784,
+            "demo": {
+                "white": 0.479,
+                "hispanic": 0.0465,
+                "black": 0.371,
+                "asian": 0.0622,
+                "mixed": 0.0244,
+                "other": 0.0171
+            }
         },
         {
             "nid": 26,
@@ -233,7 +458,16 @@
             "walkscore": 71,
             "transitscore": 43,
             "bikescore": 58,
-            "zhvi": 440067
+            "zhvi": 440067,
+            "income":53156,
+            "demo": {
+                "white": 0.63,
+                "hispanic": 0.0758,
+                "black": 0.228,
+                "asian": 0.0095,
+                "mixed": 0.0451,
+                "other": 0.0117
+            }
         },
         {
             "nid": 27,
@@ -242,7 +476,16 @@
             "walkscore": 60,
             "transitscore": 41,
             "bikescore": 64,
-            "zhvi":310165
+            "zhvi":310165,
+            "income":54922,
+            "demo": {
+                "white": 0.547,
+                "hispanic": 0.0117,
+                "black": 0.375,
+                "asian": 0.019,
+                "mixed": 0.0399,
+                "other": 0.0071
+            }
         },
         {
             "nid": 28,
@@ -251,7 +494,16 @@
             "walkscore": 62,
             "transitscore": 42,
             "bikescore": 62,
-            "zhvi":322002
+            "zhvi":322002,
+            "income":48144,
+            "demo": {
+                "white": 0.339,
+                "hispanic": 0.0134,
+                "black": 0.628,
+                "asian": 0.0073,
+                "mixed": 0.0044,
+                "other": 0.0081
+            }
         }, 
         {
             "nid": 29,
@@ -260,7 +512,16 @@
             "walkscore": 50,
             "transitscore": 44,
             "bikescore": 51,
-            "zhvi":214593 
+            "zhvi":214593,
+            "income":38472,
+            "demo": {
+                "white": 0.103,
+                "hispanic": 0,
+                "black": 0.886,
+                "asian": 0.0079,
+                "mixed": 0.0029,
+                "other": 0
+            }
         }, 
         {
             "nid": 30,
@@ -269,7 +530,16 @@
             "walkscore": 85,
             "transitscore": 45,
             "bikescore": 68,
-            "zhvi":169246
+            "zhvi":169246,
+            "income":27908,
+            "demo": {
+                "white": 0.243,
+                "hispanic": 0.0825,
+                "black": 0.587,
+                "asian": 0.0253,
+                "mixed": 0.0483,
+                "other": 0.0133
+            }
         },
         {
             "nid": 31,
@@ -278,7 +548,16 @@
             "walkscore": 63,
             "transitscore": 45,
             "bikescore": 58,
-            "zhvi":230851
+            "zhvi":230851,
+            "income":35033,
+            "demo": {
+                "white": 0.339,
+                "hispanic": 0.0473,
+                "black": 0.568,
+                "asian": 0.0189,
+                "mixed": 0.0263,
+                "other": 0
+            }
         },   
         {
             "nid": 32,
@@ -287,7 +566,16 @@
             "walkscore": 76,
             "transitscore": 56,
             "bikescore": 70,
-            "zhvi":306602
+            "zhvi":306602,
+            "income":54623,
+            "demo": {
+                "white": 0.517,
+                "hispanic": 0.0183,
+                "black": 0.426,
+                "asian": 0.017,
+                "mixed": 0.0174,
+                "other": 0.0047
+            }
         },
         {
             "nid": 33,
@@ -296,7 +584,16 @@
             "walkscore": 77,
             "transitscore": 65,
             "bikescore": 69,
-            "zhvi":178125
+            "zhvi":178125,
+            "income":42445,
+            "demo": {
+                "white": 0.305,
+                "hispanic": 0.0004,
+                "black": 0.685,
+                "asian": 0.0023,
+                "mixed": 0.0056,
+                "other": 0.0012
+            }
         }, 
         {
             "nid": 34,
@@ -305,7 +602,16 @@
             "walkscore": 75,
             "transitscore": 61,
             "bikescore": 69,
-            "zhvi":186100
+            "zhvi":186100,
+            "income":49444,
+            "demo": {
+                "white": 0.363,
+                "hispanic": 0.0079,
+                "black": 0.622,
+                "asian": 0,
+                "mixed": 0.007,
+                "other": 0
+            }
         },
         {
             "nid": 35,
@@ -314,7 +620,16 @@
             "walkscore": 90,
             "transitscore": 68,
             "bikescore": 63,
-            "zhvi":194749
+            "zhvi":194749,
+            "income":53252,
+            "demo": {
+                "white": 0.442,
+                "hispanic": 0.0294,
+                "black": 0.454,
+                "asian": 0.0658,
+                "mixed": 0.0087,
+                "other": 0.0002
+            }
         },
         {
             "nid": 36,
@@ -323,7 +638,16 @@
             "walkscore": 90,
             "transitscore": 68,
             "bikescore": 63,
-            "zhvi":145488
+            "zhvi":145488,
+            "income":54979,
+            "demo": {
+                "white": 0.511,
+                "hispanic": 0.0272,
+                "black": 0.403,
+                "asian": 0.0432,
+                "mixed": 0.0037,
+                "other": 0.0118
+            }
         },
         {
             "nid": 37,
@@ -332,7 +656,16 @@
             "walkscore": 71,
             "transitscore": 58,
             "bikescore": 63,
-            "zhvi":272067
+            "zhvi":272067,
+            "income":22012,
+            "demo": {
+                "white": 0.494,
+                "hispanic": 0.0342,
+                "black": 0.321,
+                "asian": 0.116,
+                "mixed": 0.0275,
+                "other": 0.0073
+            }
         },
         {
             "nid": 38,
@@ -341,7 +674,16 @@
             "walkscore": 77,
             "bikescore": 66,
             "transitscore": 57,
-            "zhvi":361798
+            "zhvi":361798,
+            "income":44734,
+            "demo": {
+                "white": 0.577,
+                "hispanic": 0.0272,
+                "black": 0.27,
+                "asian": 0.104,
+                "mixed": 0.0183,
+                "other": 0.0038
+            }
         },
         {
             "nid": 39,
@@ -350,7 +692,16 @@
             "walkscore": 77,
             "transitscore": 60,
             "bikescore": 82,
-            "zhvi":224062
+            "zhvi":224062,
+            "income":36402,
+            "demo": {
+                "white": 0.361,
+                "hispanic": 0.0483,
+                "black": 0.542,
+                "asian": 0.0357,
+                "mixed": 0.0118,
+                "other": 0.0013
+            }
         },
         {
             "nid": 40,
@@ -359,7 +710,16 @@
             "walkscore": 40,
             "transitscore": 0,
             "bikescore": 74,
-            "zhvi":211516
+            "zhvi":211516,
+            "income":79338,
+            "demo": {
+                "white": 0.505,
+                "hispanic": 0.0367,
+                "black": 0.104,
+                "asian": 0.338,
+                "mixed": 0.0153,
+                "other": 0.0015
+            }
         },   
         {
             "nid": 41,
@@ -368,7 +728,16 @@
             "walkscore": 49,
             "transitscore": 39,
             "bikescore": 67,
-            "zhvi":137891
+            "zhvi":137891,
+            "income":61435,
+            "demo": {
+                "white": 0.69,
+                "hispanic": 0.0214,
+                "black": 0.0846,
+                "asian": 0.188,
+                "mixed": 0.0152,
+                "other": 0.008
+            }
         },    
         {
             "nid": 42,
@@ -377,7 +746,16 @@
             "walkscore": 53,
             "transitscore": 40,
             "bikescore": 64,
-            "zhvi":170688
+            "zhvi":170688,
+            "income":54435,
+            "demo": {
+                "white": 0.898,
+                "hispanic": 0.0212,
+                "black": 0.0334,
+                "asian": 0.0298,
+                "mixed": 0.0176,
+                "other": 0
+            }
         },    
         {
             "nid": 43,
@@ -386,7 +764,16 @@
             "walkscore": 57,
             "transitscore": 37,
             "bikescore": 60,
-            "zhvi":163025
+            "zhvi":163025,
+            "income":56832,
+            "demo": {
+                "white": 0.814,
+                "hispanic": 0.0438,
+                "black": 0.0846,
+                "asian": 0.011,
+                "mixed": 0.0461,
+                "other": 0
+            }
         },
         {
             "nid": 44,
@@ -395,7 +782,16 @@
             "walkscore": 56,
             "transitscore": 41,
             "bikescore": 62,
-            "zhvi":169715
+            "zhvi": 169715,
+            "income":52713,
+            "demo": {
+                "white": 0.79,
+                "hispanic": 0.054,
+                "black": 0.0518,
+                "asian": 0.0709,
+                "mixed": 0.0226,
+                "other": 0.0104
+            }
         },    
         {
             "nid": 45,
@@ -404,7 +800,16 @@
             "walkscore": 71,
             "transitscore": 47,
             "bikescore": 65,
-            "zhvi":372639
+            "zhvi":372639,
+            "income":102455,
+            "demo": {
+                "white": 0.803,
+                "hispanic": 0.0426,
+                "black": 0.0453,
+                "asian": 0.101,
+                "mixed": 0.0082,
+                "other": 0
+            }
         },
         {
             "nid": 46,
@@ -413,7 +818,16 @@
             "walkscore": 69,
             "transitscore": 61,
             "bikescore": 76,
-            "zhvi":277003
+            "zhvi":277003,
+            "income":51993,
+            "demo": {
+                "white": 0.537,
+                "hispanic": 0.0229,
+                "black": 0.324,
+                "asian": 0.0918,
+                "mixed": 0.0245,
+                "other": 0
+            }
         },
         {
             "nid": 47,
@@ -422,7 +836,16 @@
             "walkscore": 63,
             "transitscore": 59,
             "bikescore": 76,
-            "zhvi":168377
+            "zhvi":168377,
+            "income":50065,
+            "demo": {
+                "white": 0.516,
+                "hispanic": 0.0139,
+                "black": 0.37,
+                "asian": 0.0705,
+                "mixed": 0.0299,
+                "other": 0
+            }
         },
         {
             "nid": 48,
@@ -431,7 +854,16 @@
             "walkscore": 60,
             "transitscore": 52,
             "bikescore": 55,
-            "zhvi":111994
+            "zhvi":111994,
+            "income":29160,
+            "demo": {
+                "white": 0.0637,
+                "hispanic": 0.0447,
+                "black": 0.845,
+                "asian": 0.0076,
+                "mixed": 0.0386,
+                "other": 0
+            }
         },
         {
             "nid": 49,
@@ -440,7 +872,16 @@
             "walkscore": 62,
             "transitscore": 49,
             "bikescore": 66,
-            "zhvi":93600
+            "zhvi":93600,
+            "income":27243,
+            "demo": {
+                "white": 0.131,
+                "hispanic": 0.0037,
+                "black": 0.839,
+                "asian": 0.0082,
+                "mixed": 0.0184,
+                "other": 0
+            }
         },
         {
             "nid": 50,
@@ -449,7 +890,16 @@
             "walkscore": 57,
             "transitscore": 43,
             "bikescore": 55,
-            "zhvi":18700
+            "zhvi":18700,
+            "income":23014,
+            "demo": {
+                "white": 0.0145,
+                "hispanic": 0.0034,
+                "black": 0.967,
+                "asian": 0.0007,
+                "mixed": 0.0136,
+                "other": 0.0011
+            }
         },
         {
             "nid": 51,
@@ -458,7 +908,16 @@
             "walkscore": 73,
             "transitscore": 45,
             "bikescore": 70,
-            "zhvi":78600
+            "zhvi":78600,
+            "income":21936,
+            "demo": {
+                "white": 0.0254,
+                "hispanic": 0.0222,
+                "black": 0.926,
+                "asian": 0.0108,
+                "mixed": 0.0119,
+                "other": 0.0033
+            }
         },
         {
             "nid": 52,
@@ -467,7 +926,16 @@
             "walkscore": 67,
             "transitscore": 43,
             "bikescore": 62,
-            "zhvi":40000
+            "zhvi":40000,
+            "income":22802,
+            "demo": {
+                "white": 0.0343,
+                "hispanic": 0.0065,
+                "black": 0.95,
+                "asian": 0,
+                "mixed": 0.009,
+                "other": 0
+            }
         },
         {
             "nid": 53,
@@ -476,7 +944,16 @@
             "walkscore": 80,
             "transitscore": 46,
             "bikescore": 64,
-            "zhvi":15000
+            "zhvi":15000,
+            "income":19881,
+            "demo": {
+                "white": 0.0109,
+                "hispanic": 0,
+                "black": 0.968,
+                "asian": 0,
+                "mixed": 0.0146,
+                "other": 0.0068
+            }
         },
         {
             "nid": 54,
@@ -485,7 +962,16 @@
             "walkscore": 67,
             "transitscore": 46,
             "bikescore": 62,
-            "zhvi":78500
+            "zhvi":78500,
+            "income":24031,
+            "demo": {
+                "white": 0.0275,
+                "hispanic": 0.0045,
+                "black": 0.954,
+                "asian": 0.0027,
+                "mixed": 0.0081,
+                "other": 0.0029
+            }
         },
         {
             "nid": 55,
@@ -494,7 +980,16 @@
             "walkscore": 65,
             "transitscore": 43,
             "bikescore": 61,
-            "zhvi": 63400
+            "zhvi": 63400,
+            "income":20102,
+            "demo": {
+                "white": 0.0002,
+                "hispanic": 0.0002,
+                "black": 0.979,
+                "asian": 0,
+                "mixed": 0.0205,
+                "other": 0
+            }
         }, 
         {
             "nid": 56,
@@ -503,7 +998,16 @@
             "walkscore": 60,
             "transitscore": 44,
             "bikescore": 61,
-            "zhvi":20885
+            "zhvi":20885,
+            "income":21041,
+            "demo": {
+                "white": 0.0146,
+                "hispanic": 0.0105,
+                "black": 0.967,
+                "asian": 0.0035,
+                "mixed": 0.0027,
+                "other": 0.0017
+            }
         },  
         {
             "nid": 57,
@@ -512,7 +1016,16 @@
             "walkscore": 59,
             "transitscore": 43,
             "bikescore": 63,
-            "zhvi":29000
+            "zhvi":29000,
+            "income":20894,
+            "demo": {
+                "white": 0.004,
+                "hispanic": 0,
+                "black": 0.991,
+                "asian": 0.0045,
+                "mixed": 0,
+                "other": 0
+            }
         }, 
         {
             "nid": 58,
@@ -521,7 +1034,16 @@
             "walkscore": 63,
             "transitscore": 45,
             "bikescore": 61,
-            "zhvi":59523
+            "zhvi":59523,
+            "income":27918,
+            "demo": {
+                "white": 0.0939,
+                "hispanic": 0.0048,
+                "black": 0.886,
+                "asian": 0.0054,
+                "mixed": 0.0103,
+                "other": 0
+            }
         }, 
         {
             "nid": 59,
@@ -530,7 +1052,16 @@
             "walkscore": 68,
             "transitscore": 47,
             "bikescore": 63,
-            "zhvi":40000
+            "zhvi":40000,
+            "income":22000,
+            "demo": {
+                "white": 0.0241,
+                "hispanic": 0.0052,
+                "black": 0.946,
+                "asian": 0.004,
+                "mixed": 0.0163,
+                "other": 0.0047
+            }
         },  
         {
             "nid": 60,
@@ -539,7 +1070,16 @@
             "walkscore": 62,
             "transitscore": 44,
             "bikescore": 58,
-            "zhvi":76289
+            "zhvi":76289,
+            "income":19376,
+            "demo": {
+                "white": 0.0613,
+                "hispanic": 0.0229,
+                "black": 0.91,
+                "asian": 0.0002,
+                "mixed": 0.0058,
+                "other": 0.0003
+            }
         }, 
         {
             "nid": 61,
@@ -548,7 +1088,16 @@
             "walkscore": 70,
             "transitscore": 54,
             "bikescore": 61,
-            "zhvi":0
+            "zhvi":0,
+            "income":12447,
+            "demo": {
+                "white": 0.0081,
+                "hispanic": 0,
+                "black": 0.992,
+                "asian": 0,
+                "mixed": 0,
+                "other": 0
+            }
         },  
         {
             "nid": 62,
@@ -557,7 +1106,16 @@
             "walkscore": 75,
             "transitscore": 61,
             "bikescore": 64,
-            "zhvi":152400
+            "zhvi":152400,
+            "income":10781,
+            "demo": {
+                "white": 0.0274,
+                "hispanic": 0,
+                "black": 0.968,
+                "asian": 0,
+                "mixed": 0.0044,
+                "other": 0
+            }
         },  
         {
             "nid": 63,
@@ -566,7 +1124,16 @@
             "walkscore": 69,
             "transitscore": 42,
             "bikescore": 64,
-            "zhvi":24000
+            "zhvi":24000,
+            "income":25991,
+            "demo": {
+                "white": 0.287,
+                "hispanic": 0.0217,
+                "black": 0.69,
+                "asian": 0,
+                "mixed": 0,
+                "other": 0.0005
+            }
         },
         {
             "nid": 64,
@@ -575,7 +1142,16 @@
             "walkscore": 40,
             "transitscore": 42,
             "bikescore": 62,
-            "zhvi":0
+            "zhvi":0,
+            "income":24300,
+            "demo": {
+                "white": 0.159,
+                "hispanic": 0.0064,
+                "black": 0.833,
+                "asian": 0,
+                "mixed": 0.0012,
+                "other": 0
+            }
         },  
         {
             "nid": 65,
@@ -584,7 +1160,16 @@
             "walkscore": 57,
             "transitscore": 44,
             "bikescore": 57,
-            "zhvi":31100
+            "zhvi":31100,
+            "income":18657,
+            "demo": {
+                "white": 0.229,
+                "hispanic": 0.006,
+                "black": 0.74,
+                "asian": 0.0008,
+                "mixed": 0.0237,
+                "other": 0
+            }
         },  
         {
             "nid": 66,
@@ -593,7 +1178,16 @@
             "walkscore": 57,
             "transitscore": 46,
             "bikescore": 59,
-            "zhvi":110000
+            "zhvi":110000,
+            "income":20543,
+            "demo": {
+                "white": 0.0766,
+                "hispanic": 0.0216,
+                "black": 0.897,
+                "asian": 0,
+                "mixed": 0.0046,
+                "other": 0
+            }
         },
         {
             "nid": 67,
@@ -602,7 +1196,16 @@
             "walkscore": 65,
             "transitscore": 47,
             "bikescore": 62,
-            "zhvi":0
+            "zhvi":0,
+            "income":17619,
+            "demo": {
+                "white": 0.0164,
+                "hispanic": 0,
+                "black": 0.972,
+                "asian": 0,
+                "mixed": 0.0059,
+                "other": 0.0054
+            }
         },
         {
             "nid": 68,
@@ -611,7 +1214,16 @@
             "walkscore": 56,
             "transitscore": 45,
             "bikescore": 63,
-            "zhvi":26028
+            "zhvi":26028,
+            "income":27103,
+            "demo": {
+                "white": 0.0125,
+                "hispanic": 0.0041,
+                "black": 0.97,
+                "asian": 0.0032,
+                "mixed": 0.0086,
+                "other": 0.0012
+            }
         },
         {
             "nid": 69,
@@ -620,7 +1232,16 @@
             "walkscore": 58,
             "transitscore": 44,
             "bikescore": 53,
-            "zhvi":31297
+            "zhvi":31297,
+            "income":27871,
+            "demo": {
+                "white": 0.0077,
+                "hispanic": 0.0051,
+                "black": 0.978,
+                "asian": 0,
+                "mixed": 0.0087,
+                "other": 0
+            }
         }, 
         {
             "nid": 70,
@@ -629,7 +1250,16 @@
             "walkscore": 55,
             "transitscore": 38,
             "bikescore": 51,
-            "zhvi":0
+            "zhvi":0,
+            "income":40893,
+            "demo": {
+                "white": 0.0716,
+                "hispanic": 0.019,
+                "black": 0.89,
+                "asian": 0,
+                "mixed": 0.019,
+                "other": 0
+            }
         }, 
         {
             "nid": 71,
@@ -638,7 +1268,16 @@
             "walkscore": 43,
             "transitscore": 44,
             "bikescore": 52,
-            "zhvi":26245
+            "zhvi":26245,
+            "income":21557,
+            "demo": {
+                "white": 0.223,
+                "hispanic": 0,
+                "black": 0.969,
+                "asian": 0.0036,
+                "mixed": 0.0031,
+                "other": 0.0019
+            }
         }, 
         {
             "nid": 72,
@@ -647,7 +1286,16 @@
             "walkscore": 46,
             "transitscore": 40,
             "bikescore": 52,
-            "zhvi":24880
+            "zhvi":24880,
+            "income":23282,
+            "demo": {
+                "white": 0.0097,
+                "hispanic": 0,
+                "black": 0.981,
+                "asian": 0.0062,
+                "mixed": 0,
+                "other": 0.0028
+            }
         }, 
         {
             "nid": 73,
@@ -656,7 +1304,16 @@
             "walkscore": 52,
             "transitscore": 42,
             "bikescore": 57,
-            "zhvi":0
+            "zhvi":0,
+            "income":34939,
+            "demo": {
+                "white": 0,
+                "hispanic": 0,
+                "black": 0.978,
+                "asian": 0,
+                "mixed": 0.0151,
+                "other": 0.007
+            }
         },    
         {
             "nid": 74,
@@ -665,7 +1322,16 @@
             "walkscore": 52,
             "transitscore": 44,
             "bikescore": 53,
-            "zhvi":27000
+            "zhvi":27000,
+            "income":29482,
+            "demo": {
+                "white": 0.0702,
+                "hispanic": 0.004,
+                "black": 0.913,
+                "asian": 0.0022,
+                "mixed": 0.007,
+                "other": 0.0036
+            }
         },  
         {
             "nid": 75,
@@ -674,7 +1340,16 @@
             "walkscore": 22,
             "transitscore": 33,
             "bikescore": 9,
-            "zhvi":185000
+            "zhvi":185000,
+            "income":28068,
+            "demo": {
+                "white": 0.162,
+                "hispanic": 0.0247,
+                "black": 0.813,
+                "asian": 0,
+                "mixed": 0,
+                "other": 0
+            }
         },
         {
             "nid": 76,
@@ -683,7 +1358,16 @@
             "walkscore": 60,
             "transitscore": 40,
             "bikescore": 59,
-            "zhvi":24950
+            "zhvi":24950,
+            "income":21723,
+            "demo": {
+                "white": 0.0176,
+                "hispanic": 0,
+                "black": 0.972,
+                "asian": 0,
+                "mixed": 0.057,
+                "other": 0.046
+            }
         }, 
         {
             "nid": 77,
@@ -692,7 +1376,16 @@
             "walkscore": 82,
             "transitscore": 52,
             "bikescore": 66,
-            "zhvi":120947
+            "zhvi":120947,
+            "income":20869,
+            "demo": {
+                "white": 0.264,
+                "hispanic": 0.0108,
+                "black": 0.634,
+                "asian": 0.0669,
+                "mixed": 0.0166,
+                "other": 0.0076
+            }
         },  
         {
             "nid": 78,
@@ -701,7 +1394,16 @@
             "walkscore": 62,
             "transitscore": 46,
             "bikescore": 60,
-            "zhvi":29000
+            "zhvi":29000,
+            "income":19631,
+            "demo": {
+                "white": 0.0123,
+                "hispanic": 0.0039,
+                "black": 0.982,
+                "asian": 0,
+                "mixed": 0,
+                "other": 0.0019 
+            }
         },
         {
             "nid": 79,
@@ -710,61 +1412,151 @@
             "walkscore": 14,
             "transitscore": 30,
             "bikescore": 55,
-            "zhvi":0
+            "zhvi":0,
+            "income":26458,
+            "demo": {
+                "white": 0.15,
+                "hispanic": 0,
+                "black": 0.85,
+                "asian": 0,
+                "mixed": 0,
+                "other": 0
+            }
         }, 
         {
             "nid": 80,
             "name": "Carondelet Park",
             "population":0,
-            "zhvi":0
+            "zhvi":0,
+            "income":0,
+            "demo": {
+                "white": 0,
+                "hispanic": 0,
+                "black": 0,
+                "asian": 0,
+                "mixed": 0,
+                "other": 0
+            }
         },
         {
             "nid": 81,
             "name": "Tower Grove Park",
             "population":0,
-            "zhvi":0
+            "zhvi":0,
+            "income":0,
+            "demo": {
+                "white": 0,
+                "hispanic": 0,
+                "black": 0,
+                "asian": 0,
+                "mixed": 0,
+                "other": 0
+            }
         },  
         {
             "nid": 82,
             "name": "Forest Park",
             "population":0,
-            "zhvi":0
+            "zhvi":0,
+            "income":0,
+            "demo": {
+                "white": 0,
+                "hispanic": 0,
+                "black": 0,
+                "asian": 0,
+                "mixed": 0,
+                "other": 0
+            }
         },
         {
             "nid": 83,
             "name": "Fairground Park",
             "population":0,
-            "zhvi":0
+            "zhvi":0,
+            "income":0,
+            "demo": {
+                "white": 0,
+                "hispanic": 0,
+                "black": 0,
+                "asian": 0,
+                "mixed": 0,
+                "other": 0
+            }
         },
         {
             "nid": 84,
             "name": "Penrose Park",
             "population":0,
-            "zhvi":0
+            "zhvi":0,
+            "income":0,
+            "demo": {
+                "white": 0,
+                "hispanic": 0,
+                "black": 0,
+                "asian": 0,
+                "mixed": 0,
+                "other": 0
+            }
         }, 
         {
             "nid": 85,
             "name": "O'Fallon Park",
             "population":0,
-            "zhvi":0
+            "zhvi":0,
+            "income":0,
+            "demo": {
+                "white": 0,
+                "hispanic": 0,
+                "black": 0,
+                "asian": 0,
+                "mixed": 0,
+                "other": 0
+            }
         }, 
         {
             "nid": 86,
             "name": "Bellefontaine/Calvary Cemetery",
             "population":0,
-            "zhvi":0
+            "zhvi":0,
+            "income":0,
+            "demo": {
+                "white": 0,
+                "hispanic": 0,
+                "black": 0,
+                "asian": 0,
+                "mixed": 0,
+                "other": 0
+            }
         },
         {
             "nid": 87,
             "name": "Missouri Botanical Garden",
             "population":0,
-            "zhvi":0
+            "zhvi":0,
+            "income":0,
+            "demo": {
+                "white": 0,
+                "hispanic": 0,
+                "black": 0,
+                "asian": 0,
+                "mixed": 0,
+                "other": 0
+            }
         },
         {
             "nid": 88,
             "name": "Willmore Park",
             "population":0,
-            "zhvi":0
+            "zhvi":0,
+            "income":0,
+            "demo": {
+                "white": 0,
+                "hispanic": 0,
+                "black": 0,
+                "asian": 0,
+                "mixed": 0,
+                "other": 0
+            }
         }
     ]
 }
