@@ -6,6 +6,8 @@ function btnClicked(){
   location.href = "/EvaluationCzar/ProcessBook.html"
 }
 
+$(".helptip").tooltip(); // Bootstrap documentation
+
 $.getJSON("data/Neighborhood_Boundaries.json", function (geoFeatures) {
   const mapPosition = [38.636118, -90.250592];
   $.getJSON("data/transit/metro.json", function (geoFeaturesMetro) {

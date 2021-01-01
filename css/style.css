@@ -6,6 +6,24 @@ body {
     padding-right: 1em;
 }
 
+.helptip {
+    border: none;
+    border-radius: 50%;
+    height: 17px;
+    width: 17px;
+    font-size: 15px;
+    color: white;
+    background-color: #51a2ff;
+    position: absolute;
+    top: 50%;
+    transform: translate(5px, -50%);
+}
+
+.helptip span {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
 .leaflet-tooltip {
     padding-top: 0px;
 }
