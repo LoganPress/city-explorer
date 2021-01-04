@@ -75,9 +75,11 @@ body {
     align-items: center;
 }
 
-#selected-list-container {
+#neighborhood-list-container {
     height: 150px;
     overflow: scroll;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 @media (min-width: 95vw) {
