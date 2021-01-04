@@ -19,7 +19,7 @@ ParallelPlot.prototype.initVis = function() {
         for viewer height/width to pixel conversions
     */
     vis.margin = { left: 0, top: 15, right: 0, bottom: 20 };
-    vis.height = 400 + vis.margin.top + vis.margin.bottom;
+    vis.height = $(window).height() * 0.5 + vis.margin.top + vis.margin.bottom;
     vis.width = $(window).width() * 0.5 + vis.margin.left + vis.margin.right;
 
     vis.svg = d3.select("#" + vis.parentElement)
@@ -86,7 +86,7 @@ ParallelPlot.prototype.initVis = function() {
 
     vis.horizontal = d3.scalePoint()
         .range([0, vis.width])
-        .padding(1)
+        .padding(0.7)
         .domain(vis.axes.map((d) => d.id));
     
     function path(d) {

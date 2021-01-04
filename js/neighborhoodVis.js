@@ -19,8 +19,6 @@ NeighborhoodVis.prototype.initVis = function () {
   //   .attr("height", vis.height)
   //   .attr("id", "neighborhood-vis");
 
-  vis.parallelPlot = new ParallelPlot("parallel-plot-container", vis.data);
-
   vis.wrangleData();
 };
 
@@ -43,6 +41,5 @@ NeighborhoodVis.prototype.wrangleData = function () {
 NeighborhoodVis.prototype.updateVis = function (neighborhood) {
   let vis = this;
 
-  $("#neighborhood-title").text(neighborhood.name);
   vis.parallelPlot.updateVis(neighborhood);
 };

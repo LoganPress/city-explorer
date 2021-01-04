@@ -128,29 +128,24 @@
                     <!--Visualizations Start Here-->
 					<div class="row">
                         <!--Legend-->
-						<div class="col-md-3">
-							<div
-								class="vis-container"
-								id="city-vis-legend"
+						<div class="col-md-2">
+							<div class="vis-container" id="city-vis-legend"
 							></div>
 						</div>
                         <!--City Map-->
 						<div class="col-md-4">
-							<div
-								class="vis-container"
-								id="city-vis-container"
-							></div>
+							<div class="vis-container" id="city-vis-container"></div>
                         </div>
                         <!--Parallel Plot-->
-						<div class="col-md-3">
-							<div
-								class="vis-container"
-                                id="parallel-plot-container"
-                            >
-                            <a href="/EvaluationCzar/ProcessBook.html">
+						<div class="col-md-6" id="right-container">
+							<div class="vis-container" id="parallel-plot-container"></div>
+							<h5>Selected Neighborhoods:</h5>
+							<div id="neighborhood-list-container"></div>
+						</div>
+						<div class="col-md-12">
+							<a href="/EvaluationCzar/ProcessBook.html">
                                 <button type="submit" id="processButton" class="processButton btn btn-secondary" onclick="btnClicked()">Process Book</button> 
                             </a>
-                            </div>
 						</div>
                     </div>
                 </div>
@@ -180,6 +175,7 @@
 
 		<!--Industry Standards Scripts-->
 		<script src="js/parallelPlot.js"></script>
+		<script src="js/neighborhoodList.js"></script>
 		<script src="js/histogram.js"></script>
 		<script src="js/neighborhoodVis.js"></script>
 		<script src="js/cityMap.js"></script>

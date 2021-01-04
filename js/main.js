@@ -1,8 +1,8 @@
 let cityVis;
-let neighborhoodVis;
-let histogram;
+// let neighborhoodVis;
+// let histogram;
 
-function btnClicked(){
+function btnClicked() {
   location.href = "/EvaluationCzar/ProcessBook.html"
 }
 
@@ -12,15 +12,14 @@ $.getJSON("data/Neighborhood_Boundaries.json", function (geoFeatures) {
   const mapPosition = [38.636118, -90.250592];
   $.getJSON("data/transit/metro.json", function (geoFeaturesMetro) {
     $.getJSON("data/Neighborhood_Stats.json", function (nbhdStats) {
-      neighborhoodVis = new NeighborhoodVis("neighborhood-vis-container", nbhdStats.features);
+      // neighborhoodVis = new NeighborhoodVis("neighborhood-vis-container", nbhdStats.features);
 
       cityVis = new CityMap(
         "city-vis-container",
         nbhdStats.features,
         geoFeatures.features,
         mapPosition,
-        geoFeaturesMetro.features,
-        neighborhoodVis
+        geoFeaturesMetro.features
       );
       
       // Rest In Peace

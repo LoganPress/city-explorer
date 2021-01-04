@@ -6,6 +6,10 @@ body {
     padding-right: 1em;
 }
 
+.col-md-2, .col-md-3, .col-md-4, .col-md-6 {
+    padding: 0;
+}
+
 .helptip {
     border: none;
     border-radius: 50%;
@@ -53,16 +57,27 @@ body {
 }
 
 #parallel-plot-container {
-    padding-top: 450px;
+    /* padding-top: 450px; */
     position: relative;
-    height: 700px;
-    width: 50vw
+    height: 55vh;
+    width: 50vw;
 }
 
 #parallel-plot {
     position: absolute;
     top: 0;
     left: 0;
+}
+
+#right-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#selected-list-container {
+    height: 150px;
+    overflow: scroll;
 }
 
 @media (min-width: 95vw) {

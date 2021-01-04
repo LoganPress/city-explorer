@@ -7,21 +7,22 @@ CityMap = function (
   _data,
   _geoFeatures,
   _mapPosition,
-  _geoFeaturesMetro,
-  _neighborhoodVis
+  _geoFeaturesMetro
 ) {
   this.parentElement = _parentElement;
   this.data = _data;
   this.geoFeatures = _geoFeatures;
   this.mapPosition = _mapPosition;
   this.geoFeaturesMetro = _geoFeaturesMetro;
-  this.neighborhoodVis = _neighborhoodVis;
 
   this.initVis();
 };
 
 CityMap.prototype.initVis = function () {
   let vis = this;
+
+  vis.parallelPlot = new ParallelPlot("parallel-plot-container", vis.data);
+  vis.neighborhoodList = new NeighborhoodList("neighborhood-list-container", []);
 
   vis.category = "population";
 
@@ -112,7 +113,13 @@ CityMap.prototype.initVis = function () {
         // }
         // console.log($("#" + nid + "-selected").text());
         vis.updateVis();
-        neighborhoodVis.updateVis(vis.data[index]);
+        vis.parallelPlot.updateVis(vis.data[index]);
+        let newNeighborhood = {
+          nid: nid,
+          name: vis.data[index].name,
+          color: vis.parallelPlot.selectedNeighborhoods[index].color
+        }
+        vis.neighborhoodList.updateVis(newNeighborhood);
       });
     }
   };
