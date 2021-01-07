@@ -47,11 +47,6 @@ body {
     flex-direction: row;
 }
 
-#title-text {
-    /* left: 50vw;
-    transform: translateX(-50%); */
-}
-
 #help-button {
     position: absolute;
     right: 5vw;
