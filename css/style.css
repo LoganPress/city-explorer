@@ -47,6 +47,14 @@ body {
     flex-direction: row;
 }
 
+#screencast-button {
+    position: absolute;
+    right: 20vw;
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+}
+
 #help-button {
     position: absolute;
     right: 5vw;
