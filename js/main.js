@@ -27,3 +27,11 @@ $.getJSON("data/Neighborhood_Boundaries.json", function (geoFeatures) {
     });
   });
 });
+
+$("#help-button").click(() => {
+  $("#helpModal").modal("show");
+})
+
+$(document).ready(function(){
+  $("#helpModal").modal('show');
+});

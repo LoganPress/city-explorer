@@ -105,21 +105,18 @@ CityMap.prototype.initVis = function () {
       }
       
       layer.on("click", function () {
-        vis.selectedNeighborhoods[index] = !vis.selectedNeighborhoods[index];
-        // if (vis.selectedNeighborhoods[index]) {
-        //   $("#" + nid + "-selected").text("Click to stop comparing me!");
-        // } else {
-        //   $("#" + nid + "-selected").text("Click to compare me!");
-        // }
-        // console.log($("#" + nid + "-selected").text());
-        vis.updateVis();
-        vis.parallelPlot.updateVis(vis.data[index]);
-        let newNeighborhood = {
-          nid: nid,
-          name: vis.data[index].name,
-          color: vis.parallelPlot.selectedNeighborhoods[index].color
+        let numSelected = vis.selectedNeighborhoods.reduce((acc, current) => current ? acc + 1 : acc);
+        if (numSelected < 15 || vis.selectedNeighborhoods[index]) {
+          vis.selectedNeighborhoods[index] = !vis.selectedNeighborhoods[index];
+          vis.updateVis();
+          vis.parallelPlot.updateVis(vis.data[index]);
+          let newNeighborhood = {
+            nid: nid,
+            name: vis.data[index].name,
+            color: vis.parallelPlot.selectedNeighborhoods[index].color
+          }
+          vis.neighborhoodList.updateVis(newNeighborhood);
         }
-        vis.neighborhoodList.updateVis(newNeighborhood);
       });
     }
   };
@@ -191,7 +188,7 @@ CityMap.prototype.initVis = function () {
   ).addTo(vis.map);
 
   $('label').click(function(e) {
-    vis.category = e.target.childNodes[1].defaultValue;
+    vis.category = e.currentTarget.childNodes[1].defaultValue;
     vis.updateVis();
   });
 

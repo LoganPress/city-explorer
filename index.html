@@ -21,12 +21,39 @@
 	<body>
 		<div class="container">
             <!--Title-->
-            <br>
-            <b><h1>Explore the city of St. Louis, MO</h1></b>
-            
-            <p>
-
-            </p>
+			<br>
+			<div id="header-container">
+				<b><h1 id="title-text">Explore the city of St. Louis, MO</h1></b>
+				<button class="btn btn-secondary" id="help-button">Help</button>
+            </div>
+			<br/>
+			
+			<!-- Modal from https://www.w3schools.com/bootstrap/bootstrap_modal.asp -->
+			<div id="helpModal" class="modal fade" role="dialog">
+				<div class="modal-dialog">
+				  	<div class="modal-content">
+						<div class="modal-header">
+						<h4 class="modal-title">Explore the City of St. Louis</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+						<p>
+							Welcome! This website is an experiential way to interact with and explore the city of St. Louis. 
+							We have compiled various data on the neighborhoods of St. Louis City, which are presented here. 
+							Here is how to use this site: <br/>
+							- To examine a specific category of data, click on the associated button near the top of the page. <br/>
+							- To get more information on a category, hover over the question mark next to the category's name. <br/>
+							- Click on a neighborhood in the map to focus it in the line chart on the righthand side of the page <br/>
+							- Click on a neighborhood in the map, or in the list of selected neighborhoods, to remove it from the selection <br/>
+							To bring up this menu again, press the "Help" button.
+						</p>
+						</div>
+						<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+				  	</div>
+				</div>
+			</div>
 
 			<!--Main Container-->
 			<div id="radio">
@@ -57,7 +84,7 @@
 								checked
 							/>
 							Population
-							<button type="button" class="helptip" data-toggle="tooltip" data-placement="bottom" title="
+							<button type="button" class="helptip" data-toggle="tooltip" data-placement="bottom" value="population" title="
 							This is the total population that resides within the boundaries of each neighborhood.
 							"><span>?</span></button>
 						</label>
@@ -73,7 +100,7 @@
 								autocomplete="off"
 							/>
 							Walk Score
-							<button type="button" class="helptip" data-toggle="tooltip" data-placement="bottom" title="
+							<button type="button" class="helptip" data-toggle="tooltip" data-placement="bottom" value="walkscore" title="
 							A measure of how easy it is for one to complete their daily tasks purely by walking. '0' is car-dependent, and '100' is a pedestrian's paradise.
 							"><span>?</span></button>
 						</label>
@@ -88,7 +115,7 @@
 								autocomplete="off"
 							/>
 							Transit Score
-							<button type="button" class="helptip" data-toggle="tooltip" data-placement="bottom" title="
+							<button type="button" class="helptip" data-toggle="tooltip" data-placement="bottom" value="transitscore" title="
 							A measure of how accessible public transit options are. '0' is no transit, and '100' is a rider's paradise.
 							"><span>?</span></button>
 						</label>
@@ -103,7 +130,7 @@
 								autocomplete="off"
 							/>
 							Bike Score
-							<button type="button" class="helptip" data-toggle="tooltip" data-placement="bottom" title="
+							<button type="button" class="helptip" data-toggle="tooltip" data-placement="bottom" value="bikescore" title="
 							A measure of a neighborhood's bike-friendliness, based on bike lanes and local topography. '0' is minimal bike infrastructure, and '100' is a biker's paradise.
 							"><span>?</span></button>
 						</label>
@@ -118,7 +145,7 @@
 								autocomplete="off"
 							/>
 							Home Value Estimate
-							<button type="button" class="helptip" data-toggle="tooltip" data-placement="bottom" title="
+							<button type="button" class="helptip" data-toggle="tooltip" data-placement="bottom" value="zhvi" title="
 							An estimate of the median home value for a neighborhood.
 							"><span>?</span></button>
 						</label>
@@ -140,9 +167,10 @@
 						<div class="col-md-6" id="right-container">
 							<div class="vis-container" id="parallel-plot-container"></div>
 							<h5>Selected Neighborhoods:</h5>
+							<p>(Click colored square to deselect)</p>
 							<div id="neighborhood-list-container"></div>
 						</div>
-						<div class="col-md-12">
+						<div class="col-md-12" id="process-button-container">
 							<a href="/EvaluationCzar/ProcessBook.html">
                                 <button type="submit" id="processButton" class="processButton btn btn-secondary" onclick="btnClicked()">Process Book</button> 
                             </a>
