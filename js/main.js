@@ -28,6 +28,10 @@ $.getJSON("data/Neighborhood_Boundaries.json", function (geoFeatures) {
   });
 });
 
+$("#screencast-button").click(() => {
+  $("#screencastModal").modal("show");
+})
+
 $("#help-button").click(() => {
   $("#helpModal").modal("show");
 })

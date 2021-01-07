@@ -63,6 +63,12 @@ body {
     font-size: 20px;
 }
 
+#screencastModal {
+    position: absolute;
+    left: 40vw;
+    transform: translateX(-50%);
+}
+
 #city-vis-legend {
     position: relative;
     height: 700px;

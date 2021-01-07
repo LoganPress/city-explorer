@@ -24,7 +24,7 @@
 			<br>
 			<div id="header-container">
 				<b><h1 id="title-text">Explore the city of St. Louis, MO</h1></b>
-				<a href="https://youtu.be/XDa5wxFzLfo"><button class="btn btn-secondary" id="screencast-button">Screencast</button></a>
+				<button class="btn btn-secondary" id="screencast-button">Screencast</button>
 				<button class="btn btn-secondary" id="help-button">Help</button>
             </div>
 			<br/>
@@ -34,27 +34,45 @@
 				<div class="modal-dialog">
 				  	<div class="modal-content">
 						<div class="modal-header">
-						<h4 class="modal-title">Explore the City of St. Louis</h4>
-						<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Explore the City of St. Louis</h4>
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
 						</div>
 						<div class="modal-body">
-						<p>
-							Welcome! This website is an experiential way to interact with and explore the city of St. Louis. 
-							We have compiled various data on the neighborhoods of St. Louis City, which are presented here. 
-							Here is how to use this site: <br/>
-							- To examine a specific category of data, click on the associated button near the top of the page. <br/>
-							- To get more information on a category, hover over the question mark next to the category's name. <br/>
-							- Click on a neighborhood in the map to focus it in the line chart on the righthand side of the page <br/>
-							- Click on a neighborhood in the map, or in the list of selected neighborhoods, to remove it from the selection <br/>
-							To bring up this menu again, press the "Help" button.
-						</p>
+							<p>
+								Welcome! This website is an experiential way to interact with and explore the city of St. Louis. 
+								We have compiled various data on the neighborhoods of St. Louis City, which are presented here. 
+								Here is how to use this site: <br/>
+								- To examine a specific category of data, click on the associated button near the top of the page. <br/>
+								- To get more information on a category, hover over the question mark next to the category's name. <br/>
+								- Click on a neighborhood in the map to focus it in the line chart on the righthand side of the page <br/>
+								- Click on a neighborhood in the map, or in the list of selected neighborhoods, to remove it from the selection <br/>
+								- To see a demo of the tool in use, click the "Screencast" button <br/>
+								To bring up this menu again, press the "Help" button.
+							</p>
 						</div>
 						<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 						</div>
 				  	</div>
 				</div>
 			</div>
+
+			<div id="screencastModal" class="modal fade" role="dialog" width="650" height="500">
+				<div class="modal-dialog">
+				  	<div class="modal-content" style="width: fit-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<iframe width="800" height="600" src="https://www.youtube.com/embed/XDa5wxFzLfo"></iframe>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+				  	</div>
+				</div>
+			</div>
+			
 
 			<!--Main Container-->
 			<div id="radio">
@@ -179,6 +197,9 @@
                     </div>
                 </div>
 			</div>
+			<iframe width="420" height="315"
+				src="https://www.youtube.com/embed/XDa5wxFzLfo">
+			</iframe> 
 		</div>
 
 		<!--Scripts-->
